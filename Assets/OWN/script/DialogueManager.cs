@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
@@ -18,8 +16,6 @@ public class DialogueManager : MoveMenu {
 
     public void StartDialogue (Dialogue dialogue)
 	{
-        print("starting conversation with: " + dialogue.name);
-
         nameText.text = dialogue.name;
 
         sentences.Clear();

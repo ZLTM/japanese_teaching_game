@@ -12,7 +12,6 @@ public class move_camera : MonoBehaviour
     void OnMouseDown() {
             if (Input.GetMouseButtonDown(0)) 
             {
-                print(target.name);
                 cam.transform.position = target.transform.position;               
             }
         }
