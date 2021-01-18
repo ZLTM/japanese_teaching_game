@@ -37,7 +37,7 @@ public class MoveMenu : MonoBehaviour
         else
         {
             destination = 100;
-        }        
+        }//try move to itween
         iTween.MoveBy(DialogBox, iTween.Hash("y", destination, "easeType", "easeOutExpo", "delay", 0.1f));
     }
 

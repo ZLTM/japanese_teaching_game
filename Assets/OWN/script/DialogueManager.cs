@@ -4,12 +4,9 @@ using TMPro;
 
 [System.Serializable]
 public class DialogueManager : MoveMenu {
-
     public TextMeshProUGUI  nameText;
     public TextMeshProUGUI  dialogueText;
-
     private Queue<string> sentences;
-
     void Start () {
 		sentences = new Queue<string>();
 	}
@@ -17,14 +14,11 @@ public class DialogueManager : MoveMenu {
     public void StartDialogue (Dialogue dialogue)
 	{
         nameText.text = dialogue.name;
-
         sentences.Clear();
-
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
-
         DisplayNextSentence();
     }
 
@@ -43,7 +37,6 @@ public class DialogueManager : MoveMenu {
     IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
-
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;

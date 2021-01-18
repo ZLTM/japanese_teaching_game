@@ -1680,6 +1680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Kana: 12354
+  Romaji: 97
 --- !u!114 &1253796004
 MonoBehaviour:
   m_ObjectHideFlags: 0

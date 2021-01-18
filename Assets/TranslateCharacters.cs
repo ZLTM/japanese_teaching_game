@@ -7,10 +7,14 @@ public class TranslateCharacters : MonoBehaviour
 {
     public string SelectedString;
     Queue<char> SelectedQueue = new Queue<char>();
+    string TranslatedText;
+    private TMP_Text TranslatedGui;
 
     public void SetSelectedString()
     {
         SelectedString = GameObject.Find("dialogTranslation").GetComponent<TextMeshProUGUI>().text;
+        TranslatedText = "";
+        TranslatedGui = GameObject.Find("dialogTranslation").GetComponent<TMP_Text>();
 
         foreach (char Character in SelectedString)
         {
@@ -19,18 +23,20 @@ public class TranslateCharacters : MonoBehaviour
         }
     }
 
-    public void CheckCharacter(char Kana)
+    public void CheckCharacter(char Kana, char Romanji)
     {      
         print("checking queue "+"char"+SelectedQueue.Peek()+" kana"+Kana);
         if(SelectedQueue.Peek()  == Kana)
         {
+            TranslatedText += Romanji;
             print("Deleting char"+SelectedQueue.Peek());
             SelectedQueue.Dequeue();
         }
         
         if(SelectedQueue.Count == 0)
         {
-            print("translated!!!");
+            TranslatedGui.text = TranslatedText;
+            print(TranslatedText);
         }
     }
 }
