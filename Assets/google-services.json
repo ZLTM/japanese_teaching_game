@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "164023955264",
+    "project_id": "japaneseteaching-db",
+    "storage_bucket": "japaneseteaching-db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164023955264:android:4b285831efd423922154a5",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.protfungus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164023955264-codd0t37hlbsb1ke0gnot2cjeebn2pj9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_zd0GgYvYlynMJYKvY1pgGlxBqeT75dg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164023955264-codd0t37hlbsb1ke0gnot2cjeebn2pj9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
