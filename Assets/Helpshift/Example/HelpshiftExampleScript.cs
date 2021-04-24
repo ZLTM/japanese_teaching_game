@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 #if UNITY_IOS || UNITY_ANDROID
 using Helpshift;
 using HSMiniJSON;
@@ -252,7 +253,7 @@ public class HelpshiftExampleScript : MonoBehaviour
 
     public void onCampaignsTabClick()
     {
-        Application.LoadLevel(1);
+        SceneManager.LoadScene(1);
     }
 
     /**

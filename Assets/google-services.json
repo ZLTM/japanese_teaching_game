@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "164023955264-tbi1pgoic49qmk7ih1fvn4betdtt4m6m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.DefaultCompany.protfungus",
+            "certificate_hash": "1e5bd7793c9f57602e6695f9ce3ea2c6108d0986"
+          }
+        },
+        {
           "client_id": "164023955264-codd0t37hlbsb1ke0gnot2cjeebn2pj9.apps.googleusercontent.com",
           "client_type": 3
         }

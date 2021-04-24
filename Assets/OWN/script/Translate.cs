@@ -31,7 +31,7 @@ public class Translate : MoveMenu
                     TMPTextTranslation.text = LastClickedWord;   
                     TranslateCharacters translateCharacters = GameObject.Find("Translation").GetComponent<TranslateCharacters>();
                     translateCharacters.SetSelectedString();       
-                    OpenKana("open");  
+                    // OpenKana("open");  
                     OpenTranslation("open");
                 }          
             }

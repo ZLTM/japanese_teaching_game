@@ -5,7 +5,7 @@
 	void OnMouseDown() 
     {     
 		TriggerDialogue();
-        OpenDialog("open"); 		
+        OpenDialog(); 		
     }
 
 	public void TriggerDialogue ()

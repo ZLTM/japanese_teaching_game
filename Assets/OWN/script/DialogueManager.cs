@@ -51,6 +51,6 @@ public class DialogueManager : MoveMenu {
 
     public void CloseDialogBox()
     {
-        OpenDialog("close"); 
+        OpenDialog(); 
     }
 }

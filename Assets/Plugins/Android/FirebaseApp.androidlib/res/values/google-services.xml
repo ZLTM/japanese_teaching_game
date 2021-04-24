@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<resources tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
+<resources tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_android_client_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
   <string name="gcm_defaultSenderId" translatable="false">164023955264</string>
   <string name="google_storage_bucket" translatable="false">japaneseteaching-db.appspot.com</string>
   <string name="project_id" translatable="false">japaneseteaching-db</string>
   <string name="google_api_key" translatable="false">AIzaSyB_zd0GgYvYlynMJYKvY1pgGlxBqeT75dg</string>
   <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB_zd0GgYvYlynMJYKvY1pgGlxBqeT75dg</string>
   <string name="google_app_id" translatable="false">1:164023955264:android:4b285831efd423922154a5</string>
+  <string name="default_android_client_id" translatable="false">164023955264-tbi1pgoic49qmk7ih1fvn4betdtt4m6m.apps.googleusercontent.com</string>
   <string name="default_web_client_id" translatable="false">164023955264-codd0t37hlbsb1ke0gnot2cjeebn2pj9.apps.googleusercontent.com</string>
 </resources>
