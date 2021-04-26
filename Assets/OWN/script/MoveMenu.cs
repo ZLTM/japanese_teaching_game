@@ -4,28 +4,34 @@ public class MoveMenu : MonoBehaviour
 {
     double destination = 0f;
 
-    public GameObject KanaInit;
+    public GameObject KanjiInit;
     public GameObject TranslationInit;
     public GameObject DialogBoxInit;
 
-    public GameObject Kana;
+    public GameObject Kanji;
     public GameObject Translation;
     public GameObject DialogBox;
 
 
-    public void OpenKana(string order)
+    public void OpenKanji()
     {
-        MovePanel(Kana, KanaInit, "x", -210, 0.1f);
+        MovePanel(Kanji, KanjiInit, "x", -210, 0.1f);
     }
 
     public void OpenDialog()
     {
         MovePanel(DialogBox, DialogBoxInit, "y", 100, 0.1f);
+
+        bool isActive = TranslationInit.activeSelf;
+        if (isActive == true)
+        {  
+            OpenTranslation();
+        }
     }
 
-    public void OpenTranslation(string order)
+    public void OpenTranslation()
     {
-        MovePanel(Translation, TranslationInit, "y", -300, 0.1f);
+        MovePanel(Translation, TranslationInit, "y", -340, 0.1f);
     }
 
     public void MovePanel(GameObject Panel, GameObject Initialiter, string Direction, int Pixels, float Speed)

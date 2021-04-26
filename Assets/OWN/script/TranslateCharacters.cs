@@ -12,21 +12,16 @@ public class TranslateCharacters : MonoBehaviour
 
     public void SetSelectedString()
     {
-        SelectedString = GameObject.Find("dialogTranslation").GetComponent<TextMeshProUGUI>().text;
+        SelectedString = GameObject.Find("InputText").GetComponent<TextMeshProUGUI>().text;
+        print("SelectedString"+SelectedString);
         TranslatedText = "";
-        TranslatedGui = GameObject.Find("dialogTranslation").GetComponent<TMP_Text>();
-
-        foreach (char Character in SelectedString)
-        {
-            print("adding" + Character);
-            SelectedQueue.Enqueue(Character);
-        }
+        TranslatedGui = GameObject.Find("InputText").GetComponent<TMP_Text>();
     }
 
-    public void CheckCharacter(char Kana, char Romanji)
+    public void CheckCharacter(string romanji)
     {      
-        print("checking queue "+"char"+SelectedQueue.Peek()+" kana"+Kana);
-        if(SelectedQueue.Peek()  == Kana)
+/*         print("checking queue "+"char"+SelectedQueue.Peek()+" Kanji"+Kanji);
+        if(SelectedQueue.Peek()  == Kanji)
         {
             TranslatedText += Romanji;
             print("Deleting char"+SelectedQueue.Peek());
@@ -37,6 +32,6 @@ public class TranslateCharacters : MonoBehaviour
         {
             TranslatedGui.text = TranslatedText;
             print(TranslatedText);
-        }
+        } */
     }
 }
