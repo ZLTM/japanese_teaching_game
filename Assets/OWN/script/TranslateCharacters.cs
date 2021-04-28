@@ -5,22 +5,41 @@ using TMPro;
 
 public class TranslateCharacters : MonoBehaviour
 {
-    public string SelectedString;
-    Queue<char> SelectedQueue = new Queue<char>();
-    string TranslatedText;
-    private TMP_Text TranslatedGui;
+    string TMPTextTranslation;
+    string TMPTInputField;
+    KanjiDict kanjiDict;
 
-    public void SetSelectedString()
+    void Start()
     {
-        SelectedString = GameObject.Find("InputText").GetComponent<TextMeshProUGUI>().text;
-        print("SelectedString"+SelectedString);
-        TranslatedText = "";
-        TranslatedGui = GameObject.Find("InputText").GetComponent<TMP_Text>();
+        kanjiDict = GameObject.Find("GM").GetComponent<KanjiDict>();
+    }
+    public void SetSelectedString(string originalText, string translatedText)
+    {
+        print("SelectedString: "+translatedText);
+        GameObject.Find("dialogTranslation").GetComponent<TextMeshProUGUI>().text = originalText + " " + translatedText;
     }
 
-    public void CheckCharacter(string romanji)
-    {      
-/*         print("checking queue "+"char"+SelectedQueue.Peek()+" Kanji"+Kanji);
+    public void CheckCharacter()
+    {
+        TMPTextTranslation = GameObject.Find("dialogTranslation").GetComponent<TextMeshProUGUI>().text;
+        TMPTInputField = GameObject.Find("InputField").GetComponent<TMP_InputField>().text;
+        foreach (string key in kanjiDict.kanjiRomanji.Keys)
+        {
+            if(TMPTextTranslation == key)
+            {
+                if (TMPTInputField.Trim() == kanjiDict.kanjiRomanji[key].Trim())
+                {
+                    SetSelectedString(TMPTextTranslation, TMPTInputField);
+                }
+                else
+                {
+                    print("wrong translation try again");
+                }
+            }
+        }
+
+/*  if kanji enviado buscar en dict sacar romaji comparar romaji enviado       
+  print("checking queue "+"char"+SelectedQueue.Peek()+" Kanji"+Kanji);
         if(SelectedQueue.Peek()  == Kanji)
         {
             TranslatedText += Romanji;

@@ -47,7 +47,7 @@ public class Translate : MoveMenu
                     TMPTextTranslation.text = LastClickedWord;   
                     TranslateCharacters translateCharacters = GameObject.Find("Translation").GetComponent<TranslateCharacters>();
                     OpenTranslation();
-                    translateCharacters.CheckCharacter(romanji);
+                    // translateCharacters.CheckCharacter(kanji, romanji);
                 }
             }
         }
