@@ -7,6 +7,6 @@ public class SelectKanji : MonoBehaviour
   public string romanji;
     public void SendKanji() 
     {     
-      print("need to create kanji bestiary here");
+      print("may need to create kanji bestiary here");
     }
 }

@@ -37,20 +37,5 @@ public class TranslateCharacters : MonoBehaviour
                 }
             }
         }
-
-/*  if kanji enviado buscar en dict sacar romaji comparar romaji enviado       
-  print("checking queue "+"char"+SelectedQueue.Peek()+" Kanji"+Kanji);
-        if(SelectedQueue.Peek()  == Kanji)
-        {
-            TranslatedText += Romanji;
-            print("Deleting char"+SelectedQueue.Peek());
-            SelectedQueue.Dequeue();
-        }
-        
-        if(SelectedQueue.Count == 0)
-        {
-            TranslatedGui.text = TranslatedText;
-            print(TranslatedText);
-        } */
     }
 }

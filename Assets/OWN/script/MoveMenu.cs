@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 public class MoveMenu : MonoBehaviour
 {
     double destination = 0f;
@@ -16,6 +17,10 @@ public class MoveMenu : MonoBehaviour
     public GameObject KanjiInfo;
     Button selectedKanji;
     Sprite kanjiImage;
+    string kanjiReading;
+    TextMeshProUGUI selectedReading;
+    string kanjiDescription;
+    TextMeshProUGUI selectedDescription;    
 
     void Start()
     {
@@ -23,7 +28,23 @@ public class MoveMenu : MonoBehaviour
     }
     public void OpenKanji()
     {
-        MovePanel(Kanji, KanjiInit, "x", -210, 0.1f);
+        bool kanjiIsActive = KanjiInit.activeSelf;
+        bool infoIsActive = KanjiInfoInit.activeSelf;
+
+        if (!kanjiIsActive && !infoIsActive)
+        {  
+            MovePanel(Kanji, KanjiInit, "x", -210, 0.1f);
+        }
+
+        else if (kanjiIsActive)
+        {  
+            MovePanel(Kanji, KanjiInit, "x", -210, 0.1f);
+        }
+
+        else if (infoIsActive)
+        {  
+            MovePanel(KanjiInfo, KanjiInfoInit, "x", -210, 0.1f);
+        }
     }
 
     public void OpenDialog()
@@ -77,5 +98,18 @@ public class MoveMenu : MonoBehaviour
         kanjiImage = GameObject.Find(clickedButtonName).GetComponent<Image>().sprite;
         selectedKanji = GameObject.Find("SelectedKanji").GetComponent<Button>();
         selectedKanji.image.sprite = kanjiImage;
+    }
+
+    public void SetKanjiContent()
+    {
+        clickedButtonName = EventSystem.current.currentSelectedGameObject.name;
+        kanjiReading = GameObject.Find(clickedButtonName).GetComponent<kanjiDetails>().Readings;
+        selectedReading = GameObject.Find("SelectedReading").GetComponent<TextMeshProUGUI>();
+        selectedReading.text = kanjiReading;
+
+        clickedButtonName = EventSystem.current.currentSelectedGameObject.name;
+        kanjiDescription = GameObject.Find(clickedButtonName).GetComponent<kanjiDetails>().Description;
+        selectedDescription = GameObject.Find("SelectedDescription").GetComponent<TextMeshProUGUI>();
+        selectedDescription.text = kanjiDescription;
     }
 }

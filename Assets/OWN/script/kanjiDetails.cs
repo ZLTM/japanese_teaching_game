@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class kanjiDetails : MonoBehaviour
 {
-    [SerializeField] [TextArea] private string Readings; 
-    [SerializeField] [TextArea] private string Description; 
+    [SerializeField] [TextArea] public string Readings; 
+    [SerializeField] [TextArea] public string Description; 
     
 }
