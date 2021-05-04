@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 public class MoveMenu : MonoBehaviour
 {
-    double destination = 0f;
+    float y = 0f;
     string clickedButtonName;
 
     public GameObject KanjiInit;
@@ -33,23 +33,23 @@ public class MoveMenu : MonoBehaviour
 
         if (!kanjiIsActive && !infoIsActive)
         {  
-            MovePanel(Kanji, KanjiInit, "x", -210, 0.1f);
+            MovePanel(Kanji, KanjiInit, -350f, 0f, 0.1f);
         }
 
         else if (kanjiIsActive)
         {  
-            MovePanel(Kanji, KanjiInit, "x", -210, 0.1f);
+            MovePanel(Kanji, KanjiInit, -350f, 0f, 0.1f);
         }
 
         else if (infoIsActive)
         {  
-            MovePanel(KanjiInfo, KanjiInfoInit, "x", -210, 0.1f);
+            MovePanel(KanjiInfo, KanjiInfoInit, -350f, 0f, 0.1f);
         }
     }
 
     public void OpenDialog()
     {
-        MovePanel(DialogBox, DialogBoxInit, "y", 100, 0.1f);
+        MovePanel(DialogBox, DialogBoxInit, 0f, 280f, 0.1f);
 
         bool isActive = TranslationInit.activeSelf;
         if (isActive == true)
@@ -60,12 +60,12 @@ public class MoveMenu : MonoBehaviour
 
     public void OpenTranslation()
     {
-        MovePanel(Translation, TranslationInit, "y", -340, 0.1f);
+        MovePanel(Translation, TranslationInit, 0f, 330f, 0.1f);
     }
 
     public void OpenKanjiInfo()
     {
-        MovePanel(KanjiInfo, KanjiInfoInit, "x", -210, 0.1f);
+        MovePanel(KanjiInfo, KanjiInfoInit, -350f, 0f, 0.1f);
 
         bool isActive = KanjiInit.activeSelf;
         if (isActive == true)
@@ -75,20 +75,18 @@ public class MoveMenu : MonoBehaviour
 
     }
 
-    public void MovePanel(GameObject Panel, GameObject Initialiter, string Direction, int Pixels, float Speed)
+    public void MovePanel(GameObject Panel, GameObject Initialiter, float x, float y, float Speed)
     {
         bool isActive = Initialiter.activeSelf;
         if (isActive == false)
-        {  
+        {  print("on if");
             Initialiter.SetActive(true);
-            destination = Pixels;
-            iTween.MoveBy(Panel, iTween.Hash(Direction, destination, "easeType", "easeOutExpo", "delay", Speed));
+            iTween.MoveBy(Panel, iTween.Hash("amount", new Vector3 (x, y, 0), "easeType", "easeOutExpo", "delay", Speed));
         }
         else
-        {
+        {  print("on else");
             Initialiter.SetActive(false);
-            destination = -Pixels;
-            iTween.MoveBy(Panel, iTween.Hash(Direction, destination, "easeType", "easeOutExpo", "delay", Speed));
+            iTween.MoveBy(Panel, iTween.Hash("amount", new Vector3 (-x, -y, 0), "easeType", "easeOutExpo", "delay", Speed));
         }
     }
 
@@ -112,4 +110,9 @@ public class MoveMenu : MonoBehaviour
         selectedDescription = GameObject.Find("SelectedDescription").GetComponent<TextMeshProUGUI>();
         selectedDescription.text = kanjiDescription;
     }
+    public void MoveGuiElement()
+    {
+        print("update");
+    }
+
 }
