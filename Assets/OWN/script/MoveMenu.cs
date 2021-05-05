@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 using TMPro;
 public class MoveMenu : MonoBehaviour
 {
-    float y = 0f;
     string clickedButtonName;
 
     public GameObject KanjiInit;
@@ -79,12 +78,12 @@ public class MoveMenu : MonoBehaviour
     {
         bool isActive = Initialiter.activeSelf;
         if (isActive == false)
-        {  print("on if");
+        {
             Initialiter.SetActive(true);
             iTween.MoveBy(Panel, iTween.Hash("amount", new Vector3 (x, y, 0), "easeType", "easeOutExpo", "delay", Speed));
         }
         else
-        {  print("on else");
+        {
             Initialiter.SetActive(false);
             iTween.MoveBy(Panel, iTween.Hash("amount", new Vector3 (-x, -y, 0), "easeType", "easeOutExpo", "delay", Speed));
         }

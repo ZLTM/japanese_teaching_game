@@ -1230,7 +1230,7 @@ BoxCollider:
   m_GameObject: {fileID: 429341790}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 5.274618, y: 10.589248, z: 0.2}
   m_Center: {x: -0.06865292, y: -0.24028604, z: 0}
@@ -1255,11 +1255,18 @@ MonoBehaviour:
   DialogBox: {fileID: 1147140215}
   KanjiInfo: {fileID: 500755158}
   dialogue:
-    name: right!
-    sentences:
-    - "the actual text <color=yellow>\u4E00</color>"
-    - fhgd
-    - hgf
+  - name: 
+    kanjiImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 1
+    sentences: []
+  - name: 
+    kanjiImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 1
+    sentences: []
+  CharacterSprite: {fileID: 0}
+  CharacterPosition: 1
 --- !u!212 &429341795
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1497,10 +1504,12 @@ GameObject:
   m_Component:
   - component: {fileID: 548706933}
   - component: {fileID: 548706932}
-  - component: {fileID: 548706934}
   - component: {fileID: 548706935}
   - component: {fileID: 548706936}
   - component: {fileID: 548706937}
+  - component: {fileID: 548706934}
+  - component: {fileID: 548706938}
+  - component: {fileID: 548706939}
   m_Layer: 0
   m_Name: GM
   m_TagString: Untagged
@@ -1543,19 +1552,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548706931}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb07e201758e9324dbfd2c07df402d9a, type: 3}
+  m_Script: {fileID: 11500000, guid: ff2351281090422468a8c815a11401ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KanjiInit: {fileID: 1197244561}
-  TranslationInit: {fileID: 349104123}
-  DialogBoxInit: {fileID: 166293445}
-  KanjiInfoInit: {fileID: 574761722}
-  Kanji: {fileID: 1406322275}
-  Translation: {fileID: 1462974237}
-  DialogBox: {fileID: 1147140215}
-  KanjiInfo: {fileID: 500755158}
+  OtherFunctions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 548706939}
+        m_TargetAssemblyTypeName: MoveMenu, Assembly-CSharp
+        m_MethodName: OpenDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &548706935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1634,6 +1650,53 @@ MonoBehaviour:
     _values:
     - ichi
     - ni
+--- !u!114 &548706938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548706931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6931b3229ca4db04eb8df1eeeadbf7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenplay:
+  - name: lenor
+    kanjiImage: {fileID: 21300000, guid: 11d1c65218e63b94492d59937b41c9b9, type: 3}
+    mirrowed: 0
+    CharacterPosition: 1
+    sentences:
+    - l1
+    - l22
+  - name: monica
+    kanjiImage: {fileID: 21300000, guid: 642e6044a3aed1549afee1ebe5eaf4c3, type: 3}
+    mirrowed: 1
+    CharacterPosition: 2
+    sentences:
+    - mmm1
+    - mmm22222
+--- !u!114 &548706939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548706931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb07e201758e9324dbfd2c07df402d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KanjiInit: {fileID: 1197244561}
+  TranslationInit: {fileID: 349104123}
+  DialogBoxInit: {fileID: 166293445}
+  KanjiInfoInit: {fileID: 574761722}
+  Kanji: {fileID: 1406322275}
+  Translation: {fileID: 1462974237}
+  DialogBox: {fileID: 1147140215}
+  KanjiInfo: {fileID: 500755158}
 --- !u!1 &566333903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,7 +1920,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 548706934}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MoveMenu, Assembly-CSharp
         m_MethodName: OpenKanjiInfo
         m_Mode: 1
@@ -2838,18 +2901,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1151577328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3202,30 +3253,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 548706934}
-        m_TargetAssemblyTypeName: MoveMenu, Assembly-CSharp
-        m_MethodName: SetKanjiImage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 548706934}
-        m_TargetAssemblyTypeName: MoveMenu, Assembly-CSharp
-        m_MethodName: SetKanjiContent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 548706935}
         m_TargetAssemblyTypeName: MoveMenu, Assembly-CSharp
         m_MethodName: OpenKanjiInfo
@@ -3454,7 +3481,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 548706934}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MoveMenu, Assembly-CSharp
         m_MethodName: OpenKanji
         m_Mode: 1
@@ -5017,12 +5044,18 @@ MonoBehaviour:
   DialogBox: {fileID: 1147140215}
   KanjiInfo: {fileID: 500755158}
   dialogue:
-    name: Leonor
-    sentences:
-    - Probando dialogo
-    - Funciona!
-    - "Probemos la traduccion de kanji, presiona en este y traducelo <color=yellow>\u4E00</color>"
-    - Este dialogo solo deberia verse luego de traducir el kanji
+  - name: 
+    kanjiImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 1
+    sentences: []
+  - name: 
+    kanjiImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 1
+    sentences: []
+  CharacterSprite: {fileID: 0}
+  CharacterPosition: 1
 --- !u!212 &1945453112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5098,7 +5131,7 @@ BoxCollider:
   m_GameObject: {fileID: 1945453110}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 5.274618, y: 10.589248, z: 0.2}
   m_Center: {x: -0.06865292, y: -0.24028604, z: 0}

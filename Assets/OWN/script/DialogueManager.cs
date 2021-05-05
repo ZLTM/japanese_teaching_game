@@ -7,31 +7,51 @@ public class DialogueManager : MoveMenu {
     public TextMeshProUGUI  nameText;
     public TextMeshProUGUI  dialogueText;
     private Queue<string> sentences;
-    void Start () {
+    private Queue<string> names;
+    void Awake () {
 		sentences = new Queue<string>();
+        names = new Queue<string>();
 	}
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue (List<screenplayInfo> screenplayInfo)
 	{
-        nameText.text = dialogue.name;
+        names.Clear();
         sentences.Clear();
-        foreach (string sentence in dialogue.sentences)
+        foreach (screenplayInfo screenplay in screenplayInfo)
         {
-            sentences.Enqueue(sentence);
+            print(screenplay.name);
+            names.Enqueue(screenplay.name);
+            // print(screenplay.mirrowed);
+            // print(screenplay.CharacterPosition);
+            foreach (string sentence in screenplay.sentences)
+            {
+                sentences.Enqueue(sentence);
+            }
         }
         DisplayNextSentence();
+        DisplayNextName();
     }
 
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
         {
+            DisplayNextName();
+        }
+        string sentence = sentences.Dequeue();
+        print("on display"+sentence);
+        dialogueText.text = sentence;
+    }
+
+    public void DisplayNextName()
+    {
+        if (names.Count == 0)
+        {
             EndDialogue();
             return;
         }
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        string name = names.Dequeue();
+        nameText.text = name;
     }
 
     IEnumerator TypeSentence (string sentence)
