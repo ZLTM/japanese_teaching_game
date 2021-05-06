@@ -1256,17 +1256,15 @@ MonoBehaviour:
   KanjiInfo: {fileID: 500755158}
   dialogue:
   - name: 
-    kanjiImage: {fileID: 0}
+    CharacterImage: {fileID: 0}
     mirrowed: 0
     CharacterPosition: 1
     sentences: []
   - name: 
-    kanjiImage: {fileID: 0}
+    CharacterImage: {fileID: 0}
     mirrowed: 0
     CharacterPosition: 1
     sentences: []
-  CharacterSprite: {fileID: 0}
-  CharacterPosition: 1
 --- !u!212 &429341795
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1664,14 +1662,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenplay:
   - name: lenor
-    kanjiImage: {fileID: 21300000, guid: 11d1c65218e63b94492d59937b41c9b9, type: 3}
+    CharacterImage: {fileID: 21300000, guid: 11d1c65218e63b94492d59937b41c9b9, type: 3}
     mirrowed: 0
     CharacterPosition: 1
     sentences:
     - l1
     - l22
   - name: monica
-    kanjiImage: {fileID: 21300000, guid: 642e6044a3aed1549afee1ebe5eaf4c3, type: 3}
+    CharacterImage: {fileID: 21300000, guid: 642e6044a3aed1549afee1ebe5eaf4c3, type: 3}
     mirrowed: 1
     CharacterPosition: 2
     sentences:
@@ -5045,17 +5043,15 @@ MonoBehaviour:
   KanjiInfo: {fileID: 500755158}
   dialogue:
   - name: 
-    kanjiImage: {fileID: 0}
+    CharacterImage: {fileID: 0}
     mirrowed: 0
     CharacterPosition: 1
     sentences: []
   - name: 
-    kanjiImage: {fileID: 0}
+    CharacterImage: {fileID: 0}
     mirrowed: 0
     CharacterPosition: 1
     sentences: []
-  CharacterSprite: {fileID: 0}
-  CharacterPosition: 1
 --- !u!212 &1945453112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5097,7 +5093,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 11d1c65218e63b94492d59937b41c9b9, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5105,7 +5101,7 @@ SpriteRenderer:
   m_Size: {x: 5, y: 2.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1945453113

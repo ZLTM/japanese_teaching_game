@@ -1,57 +1,105 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 
 [System.Serializable]
 public class DialogueManager : MoveMenu {
     public TextMeshProUGUI  nameText;
     public TextMeshProUGUI  dialogueText;
+    DialogueTrigger dialogueTrigger;
     private Queue<string> sentences;
     private Queue<string> names;
+    private Queue<bool> mirrors;
+    private Queue<int> positions;
+    private Queue<Sprite> characterImages;
+    int charName = 0;
+    int charDialogue = 0;
+    List<int> numberDialogue = new List<int>();
+    int i = 0;
+    int j = 1;
     void Awake () {
 		sentences = new Queue<string>();
         names = new Queue<string>();
+        characterImages = new Queue<Sprite>();
+		mirrors = new Queue<bool>();
+        positions = new Queue<int>();
+        dialogueTrigger = GameObject.Find("Char1").GetComponent<DialogueTrigger>();
 	}
 
+/* sets dialogue display for  DisplayNextSentence
+screenplayInfo: recieves object list including:
+    */
     public void StartDialogue (List<screenplayInfo> screenplayInfo)
 	{
         names.Clear();
         sentences.Clear();
         foreach (screenplayInfo screenplay in screenplayInfo)
         {
-            print(screenplay.name);
+            numberDialogue.Add(999);
+            numberDialogue[charDialogue] = 0;
+
+            characterImages.Enqueue(screenplay.CharacterImage);
             names.Enqueue(screenplay.name);
-            // print(screenplay.mirrowed);
-            // print(screenplay.CharacterPosition);
+            positions.Enqueue(screenplay.CharacterPosition);
+            mirrors.Enqueue(screenplay.mirrowed);
+
             foreach (string sentence in screenplay.sentences)
             {
                 sentences.Enqueue(sentence);
+                i++;
             }
+            numberDialogue[charDialogue] = i;
+            charDialogue++;
+            i=0;
         }
         DisplayNextSentence();
-        DisplayNextName();
     }
 
+/* displays sentences and changes character according to the screenplay */
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
-        {
-            DisplayNextName();
-        }
-        string sentence = sentences.Dequeue();
-        print("on display"+sentence);
-        dialogueText.text = sentence;
-    }
+        charDialogue=0;
 
-    public void DisplayNextName()
-    {
-        if (names.Count == 0)
+        Sprite characterImage = characterImages.Peek();
+        int position = positions.Peek();
+        bool mirror = mirrors.Peek();
+        dialogueTrigger.SetCharacter(characterImage, position, mirror);
+
+        string name = names.Peek();
+        nameText.text = name; 
+        
+        if (j <= numberDialogue[charDialogue])
         {
-            EndDialogue();
-            return;
+            string sentence = sentences.Dequeue();
+            dialogueText.text = sentence;
+            j++;
         }
-        string name = names.Dequeue();
-        nameText.text = name;
+        else
+        {
+            characterImages.Dequeue();
+            positions.Dequeue();
+            mirrors.Dequeue();
+            names.Dequeue();
+            if(names.Count==0)
+            {
+                EndDialogue(); 
+            }
+            else
+            {
+                name = names.Peek(); 
+                nameText.text = name;
+
+                characterImage = characterImages.Peek();
+                position = positions.Peek();
+                mirror = mirrors.Peek();
+                position = positions.Peek();
+                dialogueTrigger.SetCharacter(characterImage, position, mirror);
+
+                j=1; 
+                DisplayNextSentence();
+            }
+        }      
     }
 
     IEnumerator TypeSentence (string sentence)

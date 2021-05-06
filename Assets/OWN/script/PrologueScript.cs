@@ -10,7 +10,7 @@ public class PrologueScript : MonoBehaviour
 public class screenplayInfo
 {    
     public string name;
-    public Sprite kanjiImage;
+    public Sprite CharacterImage;
     public bool mirrowed;
 
     [Range(1, 2)]

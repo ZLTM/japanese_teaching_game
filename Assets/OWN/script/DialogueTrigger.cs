@@ -3,10 +3,7 @@ using System.Collections.Generic;
 public class DialogueTrigger : MoveMenu 
 {
 	public List<screenplayInfo> dialogue;
-	Sprite CharacterVessel;
-	public Sprite CharacterSprite = null;
-	[Range(1, 2)]
-	public int CharacterPosition = 1;
+	GameObject CharacterVessel;
 
 	void OnMouseDown() 
     {     
@@ -19,9 +16,13 @@ public class DialogueTrigger : MoveMenu
 		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);		
 	}
 
-	public void SetCharacter()
+	public void SetCharacter(Sprite CharacterImage, int CharacterPosition, bool CharacterMirror)
 	{
-		CharacterVessel = GameObject.Find("Char"+CharacterPosition).GetComponent<SpriteRenderer>().sprite = CharacterSprite;
+		print(CharacterPosition+" "+CharacterMirror);
+		CharacterVessel = GameObject.Find("Char"+CharacterPosition);
+
+		CharacterVessel.GetComponent<SpriteRenderer>().sprite = CharacterImage;
+		CharacterVessel.GetComponent<SpriteRenderer>().flipX = CharacterMirror;
 	}
 
 	public void SetivateCharacterCollision(bool enabledCollider, int positionCollider)
