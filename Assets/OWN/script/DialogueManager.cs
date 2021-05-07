@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+using UnityEngine.Events;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public class DialogueManager : MoveMenu {
@@ -13,6 +14,7 @@ public class DialogueManager : MoveMenu {
     private Queue<bool> mirrors;
     private Queue<int> positions;
     private Queue<Sprite> characterImages;
+    private Queue<UnityEvent> OtherFunctions;
     int charName = 0;
     int charDialogue = 0;
     List<int> numberDialogue = new List<int>();
@@ -24,6 +26,7 @@ public class DialogueManager : MoveMenu {
         characterImages = new Queue<Sprite>();
 		mirrors = new Queue<bool>();
         positions = new Queue<int>();
+        OtherFunctions = new Queue<UnityEvent>();
         dialogueTrigger = GameObject.Find("Char1").GetComponent<DialogueTrigger>();
 	}
 
@@ -42,6 +45,7 @@ screenplayInfo: recieves object list including:
             characterImages.Enqueue(screenplay.CharacterImage);
             names.Enqueue(screenplay.name);
             positions.Enqueue(screenplay.CharacterPosition);
+            OtherFunctions.Enqueue(screenplay.OtherFunctions);
             mirrors.Enqueue(screenplay.mirrowed);
 
             foreach (string sentence in screenplay.sentences)
@@ -64,7 +68,9 @@ screenplayInfo: recieves object list including:
         Sprite characterImage = characterImages.Peek();
         int position = positions.Peek();
         bool mirror = mirrors.Peek();
+        UnityEvent OtherFunction = OtherFunctions.Peek();
         dialogueTrigger.SetCharacter(characterImage, position, mirror);
+        CallOtherFunctions(OtherFunction);
 
         string name = names.Peek();
         nameText.text = name; 
@@ -81,6 +87,7 @@ screenplayInfo: recieves object list including:
             positions.Dequeue();
             mirrors.Dequeue();
             names.Dequeue();
+            OtherFunctions.Dequeue();
             if(names.Count==0)
             {
                 EndDialogue(); 
@@ -94,7 +101,9 @@ screenplayInfo: recieves object list including:
                 position = positions.Peek();
                 mirror = mirrors.Peek();
                 position = positions.Peek();
+                OtherFunction = OtherFunctions.Peek();
                 dialogueTrigger.SetCharacter(characterImage, position, mirror);
+                CallOtherFunctions(OtherFunction);
 
                 j=1; 
                 DisplayNextSentence();
@@ -120,5 +129,10 @@ screenplayInfo: recieves object list including:
     public void CloseDialogBox()
     {
         OpenDialog(); 
+    }
+
+    void CallOtherFunctions(UnityEvent OtherFunction)
+    {
+        OtherFunction.Invoke();
     }
 }

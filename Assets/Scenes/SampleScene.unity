@@ -840,8 +840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b082488da6c0874ba7114f9376b1719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1551577835}
-  cam: {fileID: 519420031}
 --- !u!1 &257845993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,11 +1257,17 @@ MonoBehaviour:
     CharacterImage: {fileID: 0}
     mirrowed: 0
     CharacterPosition: 1
+    OtherFunctions:
+      m_PersistentCalls:
+        m_Calls: []
     sentences: []
   - name: 
     CharacterImage: {fileID: 0}
     mirrowed: 0
     CharacterPosition: 1
+    OtherFunctions:
+      m_PersistentCalls:
+        m_Calls: []
     sentences: []
 --- !u!212 &429341795
 SpriteRenderer:
@@ -1421,7 +1425,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1527,8 +1531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b082488da6c0874ba7114f9376b1719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  cam: {fileID: 0}
 --- !u!4 &548706933
 Transform:
   m_ObjectHideFlags: 0
@@ -1665,6 +1667,9 @@ MonoBehaviour:
     CharacterImage: {fileID: 21300000, guid: 11d1c65218e63b94492d59937b41c9b9, type: 3}
     mirrowed: 0
     CharacterPosition: 1
+    OtherFunctions:
+      m_PersistentCalls:
+        m_Calls: []
     sentences:
     - l1
     - l22
@@ -1672,8 +1677,23 @@ MonoBehaviour:
     CharacterImage: {fileID: 21300000, guid: 642e6044a3aed1549afee1ebe5eaf4c3, type: 3}
     mirrowed: 1
     CharacterPosition: 2
+    OtherFunctions:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 548706932}
+          m_TargetAssemblyTypeName: MoveCamera, Assembly-CSharp
+          m_MethodName: MoveToPuzzle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     sentences:
-    - mmm1
+    - "   \u4E00"
     - mmm22222
 --- !u!114 &548706939
 MonoBehaviour:
@@ -2090,8 +2110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b082488da6c0874ba7114f9376b1719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1551577835}
-  cam: {fileID: 519420031}
 --- !u!1 &678875213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,7 +2278,7 @@ GameObject:
   - component: {fileID: 778573440}
   - component: {fileID: 778573439}
   m_Layer: 0
-  m_Name: rightTarget
+  m_Name: PuzzleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2588,8 +2606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b082488da6c0874ba7114f9376b1719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1640618610}
-  cam: {fileID: 519420031}
 --- !u!1 &1051654124
 GameObject:
   m_ObjectHideFlags: 0
@@ -3479,7 +3495,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 548706939}
         m_TargetAssemblyTypeName: MoveMenu, Assembly-CSharp
         m_MethodName: OpenKanji
         m_Mode: 1
@@ -4399,8 +4415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b082488da6c0874ba7114f9376b1719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1551577835}
-  cam: {fileID: 519420031}
 --- !u!1 &1703823964
 GameObject:
   m_ObjectHideFlags: 0
@@ -4851,8 +4865,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b082488da6c0874ba7114f9376b1719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1551577835}
-  cam: {fileID: 519420031}
 --- !u!1 &1912795626
 GameObject:
   m_ObjectHideFlags: 0
@@ -5046,11 +5058,17 @@ MonoBehaviour:
     CharacterImage: {fileID: 0}
     mirrowed: 0
     CharacterPosition: 1
+    OtherFunctions:
+      m_PersistentCalls:
+        m_Calls: []
     sentences: []
   - name: 
     CharacterImage: {fileID: 0}
     mirrowed: 0
     CharacterPosition: 1
+    OtherFunctions:
+      m_PersistentCalls:
+        m_Calls: []
     sentences: []
 --- !u!212 &1945453112
 SpriteRenderer:
@@ -5241,8 +5259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b082488da6c0874ba7114f9376b1719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2033481604}
-  cam: {fileID: 519420031}
 --- !u!135 &2019049245
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5697,8 +5713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b082488da6c0874ba7114f9376b1719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1551577835}
-  cam: {fileID: 519420031}
 --- !u!1 &2056114996
 GameObject:
   m_ObjectHideFlags: 0
@@ -5808,8 +5822,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b082488da6c0874ba7114f9376b1719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2145670259}
-  cam: {fileID: 519420031}
 --- !u!1 &2132139594
 GameObject:
   m_ObjectHideFlags: 0
@@ -6100,5 +6112,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b082488da6c0874ba7114f9376b1719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 778573437}
-  cam: {fileID: 519420031}

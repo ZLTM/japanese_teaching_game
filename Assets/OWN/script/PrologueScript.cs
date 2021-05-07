@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class PrologueScript : MonoBehaviour
@@ -15,6 +16,7 @@ public class screenplayInfo
 
     [Range(1, 2)]
 	public int CharacterPosition = 1;
+    public UnityEvent OtherFunctions;
     public List<string> sentences;
 }
 

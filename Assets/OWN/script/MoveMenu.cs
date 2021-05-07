@@ -68,10 +68,11 @@ public class MoveMenu : MonoBehaviour
 
         bool isActive = KanjiInit.activeSelf;
         if (isActive == true)
-        {  
+        {
             OpenKanji();
         }
-
+        SetKanjiImage();
+        SetKanjiContent();
     }
 
     public void MovePanel(GameObject Panel, GameObject Initialiter, float x, float y, float Speed)
