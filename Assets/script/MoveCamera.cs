@@ -11,7 +11,6 @@ public class MoveCamera : MonoBehaviour
 
     public void MoveToPuzzle() 
     {
-        print("function called");
         cam = GameObject.Find("MainCamera").GetComponent<Camera>();
         target = GameObject.Find("PuzzleTarget");
         cam.transform.position = target.transform.position;               
