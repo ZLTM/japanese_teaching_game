@@ -18,7 +18,6 @@ public class DialogueTrigger : MoveMenu
 
 	public void SetCharacter(Sprite CharacterImage, int CharacterPosition, bool CharacterMirror)
 	{
-		print(CharacterPosition+" "+CharacterMirror);
 		CharacterVessel = GameObject.Find("Char"+CharacterPosition);
 
 		CharacterVessel.GetComponent<SpriteRenderer>().sprite = CharacterImage;

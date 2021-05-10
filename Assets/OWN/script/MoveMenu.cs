@@ -59,7 +59,7 @@ public class MoveMenu : MonoBehaviour
 
     public void OpenTranslation()
     {
-        MovePanel(Translation, TranslationInit, 0f, 330f, 0.1f);
+        MovePanel(Translation, TranslationInit, 0f, -430f, 0.1f);
     }
 
     public void OpenKanjiInfo()

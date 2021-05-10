@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -8,6 +6,8 @@ public class TranslateCharacters : MonoBehaviour
     string TMPTextTranslation;
     string TMPTInputField;
     KanjiDict kanjiDict;
+    TouchScreenKeyboard keyboard;
+    string keyboardValue;
 
     void Start()
     {
