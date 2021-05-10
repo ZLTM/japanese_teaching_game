@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Dragger : MonoBehaviour
 {
-
     private bool isDragging;
 
     public void OnMouseDown()

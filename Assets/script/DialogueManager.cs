@@ -15,7 +15,6 @@ public class DialogueManager : MoveMenu {
     private Queue<int> positions;
     private Queue<Sprite> characterImages;
     private Queue<UnityEvent> OtherFunctions;
-    // int charName = 0;
     int charDialogue = 0;
     List<int> numberDialogue = new List<int>();
     int i = 0;

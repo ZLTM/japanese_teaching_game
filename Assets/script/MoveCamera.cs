@@ -15,5 +15,11 @@ public class MoveCamera : MonoBehaviour
         target = GameObject.Find("PuzzleTarget");
         cam.transform.position = target.transform.position;               
     }
+    public void MoveToScene() 
+    {
+        cam = GameObject.Find("MainCamera").GetComponent<Camera>();
+        target = GameObject.Find("CenterTarget");
+        cam.transform.position = target.transform.position;               
+    }
 
 }
