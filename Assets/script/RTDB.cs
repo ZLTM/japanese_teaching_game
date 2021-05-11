@@ -9,6 +9,8 @@ public class RTDB : MonoBehaviour
     [SerializeField] TMP_InputField email;
     [SerializeField] TMP_InputField nametoread;
     [SerializeField] TextMeshProUGUI data;
+    
+    StartScene KanjiValues;
     string PulledName;
     string UpdatedName;
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class RTDB : MonoBehaviour
     void Start() 
     {
         UpdatedName = "";
+        KanjiValues = GameObject.Find("GM").GetComponent<StartScene>();
     }
 
     void Update() 
@@ -27,16 +30,16 @@ public class RTDB : MonoBehaviour
     {
         user.UserName = username.text;
         user.Email = email.text;
-        user.Ichi = "0";
-        user.Ni = "0";
-        user.San = "0";
-        user.Yon = "0";
-        user.Go = "0";
-        user.Roku = "0";
-        user.Nana = "0";
-        user.Hachi = "0";
-        user.Juu = "0";
-        user.Hi = "0";
+        user.Ichi = KanjiValues.IchiPercentage;
+        user.Ni = KanjiValues.NiPercentage;
+        user.San = KanjiValues.SanPercentage;
+        user.Yon = KanjiValues.YonPercentage;
+        user.Go = KanjiValues.GoPercentage;
+        user.Roku = KanjiValues.RokuPercentage;
+        user.Nana = KanjiValues.NanaPercentage;
+        user.Hachi = KanjiValues.HachiPercentage;
+        user.Juu = KanjiValues.JuuPercentage;
+        user.Hi = KanjiValues.HiPercentage;
 
         string json = JsonUtility.ToJson(user);
 

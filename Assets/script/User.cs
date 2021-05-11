@@ -6,14 +6,14 @@ public class User
 {
     public string UserName;
     public string Email;
-    public string Ichi;
-    public string Ni;
-    public string San;
-    public string Yon;
-    public string Go;
-    public string Roku;
-    public string Nana;
-    public string Hachi;
-    public string Juu;
-    public string Hi;
+    public double Ichi;
+    public double Ni;
+    public double San;
+    public double Yon;
+    public double Go;
+    public double Roku;
+    public double Nana;
+    public double Hachi;
+    public double Juu;
+    public double Hi;
 }

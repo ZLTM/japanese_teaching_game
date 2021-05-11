@@ -3066,6 +3066,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  IchiSuccess: 1
+  IchiFailure: 2
+  NiSuccess: 2
+  NiFailure: 0
+  SanSuccess: 0
+  SanFailure: 1
+  YonSuccess: 2
+  YonFailure: 7
+  GoSuccess: 6
+  GoFailure: 4
+  RokuSuccess: 6
+  RokuFailure: 9
+  NanaSuccess: 0
+  NanaFailure: 5
+  HachiSuccess: 3
+  HachiFailure: 7
+  JuuSuccess: 7
+  JuuFailure: 5
+  HiSuccess: 4
+  HiFailure: 2
 --- !u!114 &548706935
 MonoBehaviour:
   m_ObjectHideFlags: 0
