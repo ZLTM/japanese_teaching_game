@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "164023955264",
+    "firebase_url": "https://japaneseteaching-db-default-rtdb.firebaseio.com",
     "project_id": "japaneseteaching-db",
     "storage_bucket": "japaneseteaching-db.appspot.com"
   },
@@ -14,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "164023955264-tbi1pgoic49qmk7ih1fvn4betdtt4m6m.apps.googleusercontent.com",
+          "client_id": "164023955264-m16ec5fav3rke1lhugqf4kj9g50s7sff.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.DefaultCompany.protfungus",
-            "certificate_hash": "1e5bd7793c9f57602e6695f9ce3ea2c6108d0986"
+            "certificate_hash": "eebd348312e88aabb37404a9afbdc5fc0f489d66"
           }
         },
         {
