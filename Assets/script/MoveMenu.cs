@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 public class MoveMenu : MonoBehaviour
 {
-    string clickedButtonName;
+    string clickedButtonName = "";
 
     public GameObject KanjiInit;
     public GameObject TranslationInit;
@@ -19,11 +19,14 @@ public class MoveMenu : MonoBehaviour
     string kanjiReading;
     TextMeshProUGUI selectedReading;
     string kanjiDescription;
-    TextMeshProUGUI selectedDescription;    
+    TextMeshProUGUI selectedDescription;  
+    string kanjiPercentage;  
+    RTDB rtdb;
 
     void Start()
     {
         kanjiImage = null;
+        rtdb = GameObject.Find("FirebaseManager").GetComponent<RTDB>();
     }
     public void OpenKanji()
     {
@@ -101,14 +104,16 @@ public class MoveMenu : MonoBehaviour
     public void SetKanjiContent()
     {
         clickedButtonName = EventSystem.current.currentSelectedGameObject.name;
+
         kanjiReading = GameObject.Find(clickedButtonName).GetComponent<kanjiDetails>().Readings;
         selectedReading = GameObject.Find("SelectedReading").GetComponent<TextMeshProUGUI>();
         selectedReading.text = kanjiReading;
 
-        clickedButtonName = EventSystem.current.currentSelectedGameObject.name;
         kanjiDescription = GameObject.Find(clickedButtonName).GetComponent<kanjiDetails>().Description;
         selectedDescription = GameObject.Find("SelectedDescription").GetComponent<TextMeshProUGUI>();
         selectedDescription.text = kanjiDescription;
+
+        rtdb.Read_Data(clickedButtonName);
     }
     public void MoveGuiElement()
     {

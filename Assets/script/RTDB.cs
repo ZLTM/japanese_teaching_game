@@ -1,7 +1,8 @@
 using UnityEngine;
 using Firebase.Database;
 using TMPro;
-using UnityEngine.UI; 
+using System.Collections;
+
 
 public class RTDB : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class RTDB : MonoBehaviour
     [SerializeField] TMP_InputField email;
     [SerializeField] TMP_InputField nametoread;
     [SerializeField] TextMeshProUGUI data;
+    string kanjiPercentage; 
+    
+    TextMeshProUGUI selectedPercentage;   
     
     StartScene KanjiValues;
-    string PulledName;
+    string PulledData;
     string UpdatedName;
     // Start is called before the first frame update
 
@@ -20,6 +24,7 @@ public class RTDB : MonoBehaviour
     {
         UpdatedName = "";
         KanjiValues = GameObject.Find("GM").GetComponent<StartScene>();
+        selectedPercentage = GameObject.Find("SuccessPercentage").GetComponent<TextMeshProUGUI>();
     }
 
     void Update() 
@@ -56,28 +61,34 @@ public class RTDB : MonoBehaviour
         });
     }
 
-    public void Read_Data()
+    public void Read_Data(string KanjiQuery)
     {
-        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child(nametoread.text).GetValueAsync().ContinueWith(task =>
+        StartCoroutine(waiter(KanjiQuery));
+    }
+
+    public void SetText(string PulledData)
+    {        
+        selectedPercentage.text = PulledData;
+    }
+    IEnumerator waiter(string KanjiQuery)
+    {        
+        print(" starting corroutine ");
+
+        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child("fu1").GetValueAsync().ContinueWith(task =>
         {
             if (task.IsCompleted)
             {
                 Debug.Log("successfull");
                 DataSnapshot snapshot = task.Result;
-                PulledName = snapshot.Child("UserName").Value.ToString();
-                Debug.Log("user: "+snapshot.Child("UserName").Value.ToString());
-                Debug.Log("email: "+snapshot.Child("Email").Value.ToString());
+                PulledData = snapshot.Child(KanjiQuery).Value.ToString();
             }
             else
             {
                 Debug.Log("not successfull");
             }
-            SetText(PulledName);
         });
-    }
-
-    public void SetText(string UsedName)
-    {
-        UpdatedName = UsedName;
+        yield return new WaitForSeconds(1);
+        print(" finishing corroutine ");
+        SetText(PulledData);
     }
 }
