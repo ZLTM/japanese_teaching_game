@@ -67,8 +67,15 @@ public class RTDB : MonoBehaviour
     }
 
     public void SetText(string PulledData)
-    {        
-        selectedPercentage.text = PulledData;
+    {  
+        double RawData;
+        double.TryParse(PulledData, out RawData);
+        RawData = RawData*100;
+
+        int RawInt = Mathf.RoundToInt((float)RawData);
+
+        PulledData = RawInt.ToString();
+        selectedPercentage.text = PulledData +"%";
     }
     IEnumerator waiter(string KanjiQuery)
     {        
