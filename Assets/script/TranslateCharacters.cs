@@ -8,6 +8,7 @@ public class TranslateCharacters : MonoBehaviour
     KanjiDict kanjiDict;
     TouchScreenKeyboard keyboard;
     string keyboardValue;
+    RTDB rtdb;
 
     void Start()
     {
@@ -36,6 +37,45 @@ public class TranslateCharacters : MonoBehaviour
                     print("wrong translation try again");
                 }
             }
+        }
+    }
+    public void CorrecTranslation(string Romanji)
+    {
+        switch (Romanji)
+        {
+        case "Ichi":
+            this.GetComponent<StartScene>().IchiSuccess++;
+            break;
+        case "Ni":
+            this.GetComponent<StartScene>().NiSuccess++;
+            break;
+        case "San":
+            this.GetComponent<StartScene>().SanSuccess++;
+            break;
+        case "Yon":
+            this.GetComponent<StartScene>().YonSuccess++;
+            break;
+        case "Go":
+            this.GetComponent<StartScene>().GoSuccess++;
+            break;
+        case "Roku":
+            this.GetComponent<StartScene>().RokuSuccess++;
+            break;
+        case "Nana":
+            this.GetComponent<StartScene>().NanaSuccess++;
+            break;
+        case "Hachi":
+            this.GetComponent<StartScene>().HachiSuccess++;
+            break;
+        case "Juu":
+            this.GetComponent<StartScene>().JuuSuccess++;
+            break;
+        case "Hi":
+            this.GetComponent<StartScene>().HiSuccess++;
+            break;
+        default:
+            print ("Incorrect romanji.");
+            break;
         }
     }
 }

@@ -33,8 +33,8 @@ public class RTDB : MonoBehaviour
     }
     public void savedata()
     {
-        user.UserName = username.text;
-        user.Email = email.text;
+        user.UserName = "MainUserName";
+        user.Email = "MainEmail";
         user.Ichi = KanjiValues.IchiPercentage;
         user.Ni = KanjiValues.NiPercentage;
         user.San = KanjiValues.SanPercentage;
@@ -68,6 +68,7 @@ public class RTDB : MonoBehaviour
 
     public void SetText(string PulledData)
     {  
+        print(PulledData);
         double RawData;
         double.TryParse(PulledData, out RawData);
         RawData = RawData*100;
@@ -75,18 +76,21 @@ public class RTDB : MonoBehaviour
         int RawInt = Mathf.RoundToInt((float)RawData);
 
         PulledData = RawInt.ToString();
+        
+        print(RawData);
         selectedPercentage.text = PulledData +"%";
     }
     IEnumerator waiter(string KanjiQuery)
     {        
         print(" starting corroutine ");
 
-        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child("fu1").GetValueAsync().ContinueWith(task =>
+        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child("MainUserName").GetValueAsync().ContinueWith(task =>
         {
             if (task.IsCompleted)
             {
                 Debug.Log("successfull");
                 DataSnapshot snapshot = task.Result;
+                print(snapshot);
                 PulledData = snapshot.Child(KanjiQuery).Value.ToString();
             }
             else

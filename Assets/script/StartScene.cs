@@ -74,10 +74,3 @@ public class StartScene : MonoBehaviour
 
 }
 
-// [System.Serializable]
-// public class KanjiRatings
-// {    
-//     public string Name;
-//     public int Success;
-//     public int Failure;
-// }

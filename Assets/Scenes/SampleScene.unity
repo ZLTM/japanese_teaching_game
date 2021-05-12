@@ -3208,7 +3208,19 @@ MonoBehaviour:
     CharacterPosition: 1
     OtherFunctions:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 548706936}
+          m_TargetAssemblyTypeName: TranslateCharacters, Assembly-CSharp
+          m_MethodName: CorrecTranslation
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Ichi
+            m_BoolArgument: 0
+          m_CallState: 2
     sentences:
     - l1
     - l22
