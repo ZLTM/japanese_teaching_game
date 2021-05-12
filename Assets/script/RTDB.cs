@@ -61,7 +61,6 @@ public class RTDB : MonoBehaviour
 
     public void SetText(string PulledData)
     {  
-        print(PulledData);
         double RawData;
         double.TryParse(PulledData, out RawData);
         RawData = RawData*100;
@@ -70,12 +69,10 @@ public class RTDB : MonoBehaviour
 
         PulledData = RawInt.ToString();
         
-        print(RawData);
         selectedPercentage.text = PulledData +"%";
     }
     IEnumerator waiter(string KanjiQuery)
     {        
-        print(" starting corroutine ");
 
         FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child("MainUserName").GetValueAsync().ContinueWith(task =>
         {
@@ -83,7 +80,6 @@ public class RTDB : MonoBehaviour
             {
                 Debug.Log("successfull");
                 DataSnapshot snapshot = task.Result;
-                print(snapshot);
                 PulledData = snapshot.Child(KanjiQuery).Value.ToString();
             }
             else
@@ -92,7 +88,6 @@ public class RTDB : MonoBehaviour
             }
         });
         yield return new WaitForSeconds(1);
-        print(" finishing corroutine ");
         SetText(PulledData);
     }
 }

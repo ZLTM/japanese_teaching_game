@@ -14,39 +14,46 @@ public class Translate : MoveMenu
 
     public string LastClickedWord;
 
-    string kanji;
-    string romanji;
+    List<string> kanjis = new List<string>(); 
+    List<string> romanjis = new List<string>();
 
     void Start()
     {
         TMPTextTranslation = GameObject.Find("dialogTranslation").GetComponent<TextMeshProUGUI>();
+        foreach (string value in KanjiValue.Values)
+        {
+            romanjis.Add(value);
+        }
+
+        foreach (string value in KanjiValue.Keys)
+        {
+            kanjis.Add(value);
+        }
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
-            foreach (string value in KanjiValue.Values)
-            {
-                romanji = value;
-            }
-
-            foreach (string value in KanjiValue.Keys)
-            {
-                kanji = value;
-            }
-            
+        {            
             var wordIndex = TMP_TextUtilities.FindIntersectingWord(TMPTextDialog, Input.mousePosition, null);
+            print("worindex "+wordIndex);
 
             if (wordIndex != -1)
             {
+                
+                print("inside if ");
                 LastClickedWord = TMPTextDialog.textInfo.wordInfo[wordIndex].GetWord();
 
-                if (kanji == LastClickedWord)
+                foreach (var kanji in kanjis)
                 {
-                    TMPTextTranslation.text = LastClickedWord;
-                    OpenTranslation();
+                    if (kanji == LastClickedWord)
+                    {
+                        print("opening translation");
+                        TMPTextTranslation.text = LastClickedWord;
+                        OpenTranslation();
+                    }
                 }
+
             }
         }
     }
