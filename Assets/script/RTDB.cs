@@ -9,28 +9,21 @@ public class RTDB : MonoBehaviour
     [SerializeField] TMP_InputField username;
     [SerializeField] TMP_InputField email;
     [SerializeField] TMP_InputField nametoread;
-    [SerializeField] TextMeshProUGUI data;
     string kanjiPercentage; 
     
     TextMeshProUGUI selectedPercentage;   
     
     StartScene KanjiValues;
     string PulledData;
-    string UpdatedName;
     // Start is called before the first frame update
 
     User user = new User();
     void Start() 
     {
-        UpdatedName = "";
         KanjiValues = GameObject.Find("GM").GetComponent<StartScene>();
         selectedPercentage = GameObject.Find("SuccessPercentage").GetComponent<TextMeshProUGUI>();
     }
 
-    void Update() 
-    {
-        data.text = UpdatedName;
-    }
     public void savedata()
     {
         user.UserName = "MainUserName";

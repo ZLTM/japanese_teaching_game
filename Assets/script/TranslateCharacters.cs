@@ -78,4 +78,44 @@ public class TranslateCharacters : MonoBehaviour
             break;
         }
     }
+
+    public void IncorrecTranslation(string Romanji)
+    {
+        switch (Romanji)
+        {
+        case "Ichi":
+            this.GetComponent<StartScene>().IchiFailure++;
+            break;
+        case "Ni":
+            this.GetComponent<StartScene>().NiFailure++;
+            break;
+        case "San":
+            this.GetComponent<StartScene>().SanFailure++;
+            break;
+        case "Yon":
+            this.GetComponent<StartScene>().YonFailure++;
+            break;
+        case "Go":
+            this.GetComponent<StartScene>().GoFailure++;
+            break;
+        case "Roku":
+            this.GetComponent<StartScene>().RokuFailure++;
+            break;
+        case "Nana":
+            this.GetComponent<StartScene>().NanaFailure++;
+            break;
+        case "Hachi":
+            this.GetComponent<StartScene>().HachiFailure++;
+            break;
+        case "Juu":
+            this.GetComponent<StartScene>().JuuFailure++;
+            break;
+        case "Hi":
+            this.GetComponent<StartScene>().HiFailure++;
+            break;
+        default:
+            print ("Incorrect romanji.");
+            break;
+        }
+    }
 }
