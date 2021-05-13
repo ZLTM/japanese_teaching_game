@@ -436,7 +436,7 @@ RectTransform:
   m_Children:
   - {fileID: 2079278314}
   m_Father: {fileID: 566333907}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.007343751, y: 0.5573916}
   m_AnchorMax: {x: 0.13146877, y: 0.5957972}
@@ -487,9 +487,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416179042}
-        m_TargetAssemblyTypeName: RTDB, Assembly-CSharp
-        m_MethodName: Read_Data
+      - m_Target: {fileID: 416179041}
+        m_TargetAssemblyTypeName: SignInSample.GoogleSignin, Assembly-CSharp
+        m_MethodName: OnSignOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1214,6 +1214,85 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &165040839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165040840}
+  - component: {fileID: 165040842}
+  - component: {fileID: 165040841}
+  m_Layer: 5
+  m_Name: StatusText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &165040840
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165040839}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.02, y: 1.02, z: 1.02}
+  m_Children: []
+  m_Father: {fileID: 566333907}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.0016923079, y: 0.66950005}
+  m_AnchorMax: {x: 0.13378125, y: 0.7156112}
+  m_AnchoredPosition: {x: -0.16003418, y: -0.5}
+  m_SizeDelta: {x: -9, y: -3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &165040841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165040839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0.3462386, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &165040842
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165040839}
+  m_CullTransparentMesh: 1
 --- !u!1 &166293445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,7 +1978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ecc3cd4e10b4144931bb55e4b19a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoText: {fileID: 1318305076}
+  statusText: {fileID: 165040841}
   webClientId: 164023955264-codd0t37hlbsb1ke0gnot2cjeebn2pj9.apps.googleusercontent.com
 --- !u!114 &416179042
 MonoBehaviour:
@@ -2709,19 +2788,7 @@ MonoBehaviour:
     CharacterPosition: 1
     OtherFunctions:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 548706935}
-          m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-          m_MethodName: SwitchDialogButton
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Ichi
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     sentences:
     - l1
     - l22
@@ -2959,6 +3026,7 @@ RectTransform:
   - {fileID: 1462974238}
   - {fileID: 1651699681}
   - {fileID: 1318305075}
+  - {fileID: 165040840}
   - {fileID: 1508310277}
   - {fileID: 63246837}
   m_Father: {fileID: 0}
@@ -5068,7 +5136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1318305075
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5085,7 +5153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.007343751, y: 0.6583889}
   m_AnchorMax: {x: 0.13378125, y: 0.7156112}
-  m_AnchoredPosition: {x: 71.5, y: 6.899994}
+  m_AnchoredPosition: {x: 92.7, y: 6.899994}
   m_SizeDelta: {x: 122.4281, y: 20.393372}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318305076
@@ -5809,7 +5877,7 @@ RectTransform:
   m_Children:
   - {fileID: 151724523}
   m_Father: {fileID: 566333907}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.007343751, y: 0.6017972}
   m_AnchorMax: {x: 0.13146877, y: 0.63900006}
@@ -5862,7 +5930,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 416179042}
         m_TargetAssemblyTypeName: RTDB, Assembly-CSharp
-        m_MethodName: savedata
+        m_MethodName: Save_Data
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6256,8 +6324,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 416179041}
-        m_TargetAssemblyTypeName: GoogleSignin, Assembly-CSharp
-        m_MethodName: SignInWithGoogle
+        m_TargetAssemblyTypeName: SignInSample.GoogleSignin, Assembly-CSharp
+        m_MethodName: OnSignIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7803,9 +7871,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Load
-
-'
+  m_Text: Sign out
 --- !u!222 &2079278316
 CanvasRenderer:
   m_ObjectHideFlags: 0

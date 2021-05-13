@@ -2,6 +2,8 @@ using UnityEngine;
 using Firebase.Database;
 using TMPro;
 using UnityEngine.UI; 
+using System.Threading.Tasks;
+using Google;
 
 public class RTDB : MonoBehaviour
 {
@@ -13,23 +15,26 @@ public class RTDB : MonoBehaviour
     StartScene KanjiValues;
     string PulledName;
     string UpdatedName;
+    private GoogleSignInConfiguration configuration;
     // Start is called before the first frame update
 
     User user = new User();
+
     void Start() 
     {
         UpdatedName = "";
         KanjiValues = GameObject.Find("GM").GetComponent<StartScene>();
     }
 
-    void Update() 
+    public void Save_Data() 
     {
-        // data.text = UpdatedName;
+        GoogleSignIn.DefaultInstance.SignIn().ContinueWith(
+        savedata);
     }
-    public void savedata()
+    internal void savedata(Task<GoogleSignInUser> task)
     {
-        // user.UserName = username.text;
-        // user.Email = email.text;
+        user.UserName = task.Result.DisplayName;
+        user.Email = task.Result.Email;
         user.Ichi = KanjiValues.IchiPercentage;
         user.Ni = KanjiValues.NiPercentage;
         user.San = KanjiValues.SanPercentage;
@@ -43,7 +48,7 @@ public class RTDB : MonoBehaviour
 
         string json = JsonUtility.ToJson(user);
 
-        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child(user.UserName).SetRawJsonValueAsync(json).ContinueWith(task =>
+        FirebaseDatabase.DefaultInstance.RootReference.Child(user.UserName).SetRawJsonValueAsync(json).ContinueWith(task =>
         {
             if (task.IsCompleted)
             {
@@ -58,7 +63,7 @@ public class RTDB : MonoBehaviour
 
     public void Read_Data(string KanjiQuery)
     {
-        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child("fu1").GetValueAsync().ContinueWith(task =>
+        FirebaseDatabase.DefaultInstance.RootReference.Child(user.UserName).GetValueAsync().ContinueWith(task =>
         {
             if (task.IsCompleted)
             {

@@ -36,19 +36,15 @@ public class Translate : MoveMenu
         if (Input.GetMouseButtonDown(0))
         {            
             var wordIndex = TMP_TextUtilities.FindIntersectingWord(TMPTextDialog, Input.mousePosition, null);
-            print("worindex "+wordIndex);
 
             if (wordIndex != -1)
             {
-                
-                print("inside if ");
                 LastClickedWord = TMPTextDialog.textInfo.wordInfo[wordIndex].GetWord();
 
                 foreach (var kanji in kanjis)
                 {
                     if (kanji == LastClickedWord)
                     {
-                        print("opening translation");
                         TMPTextTranslation.text = LastClickedWord;
                         OpenTranslation();
                     }
