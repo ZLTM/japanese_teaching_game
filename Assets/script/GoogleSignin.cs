@@ -7,10 +7,11 @@ using Firebase.Auth;
 using Google;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GoogleSignin : MonoBehaviour
 {
-    public Text infoText;
+    public TextMeshProUGUI infoText;
     public string webClientId = "<your client id here>";
 
     private FirebaseAuth auth;
@@ -24,21 +25,6 @@ public class GoogleSignin : MonoBehaviour
 
     private void CheckFirebaseDependencies()
     {
-        Firebase.Auth.FirebaseUser user = auth.CurrentUser;
-        if (user != null) 
-        {
-            print("getting user");
-            string name = user.DisplayName;
-            print(name);
-            string email = user.Email;
-            print(email);
-            System.Uri photo_url = user.PhotoUrl;
-            // The user's Id, unique to the Firebase project.
-            // Do NOT use this value to authenticate with your backend server, if you
-            // have one; use User.TokenAsync() instead.
-            string uid = user.UserId;
-        }
-
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
             if (task.IsCompleted)
@@ -55,11 +41,49 @@ public class GoogleSignin : MonoBehaviour
         });
     }
 
+    public void GetSIgnUserData()
+    {
+        Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+        Firebase.Auth.Credential credential =
+        Firebase.Auth.GoogleAuthProvider.GetCredential(googleIdToken, googleAccessToken);
+        auth.SignInWithCredentialAsync(credential).ContinueWith(task => {
+        if (task.IsCanceled) {
+            Debug.LogError("SignInWithCredentialAsync was canceled.");
+            return;
+        }
+        if (task.IsFaulted) {
+            Debug.LogError("SignInWithCredentialAsync encountered an error: " + task.Exception);
+            return;
+        }
+
+        Firebase.Auth.FirebaseUser newUser = task.Result;
+        Debug.LogFormat("User signed in successfully: {0} ({1})",
+            newUser.DisplayName, newUser.UserId);
+        });
+        Firebase.Auth.FirebaseUser user = auth.CurrentUser;
+        if (user != null) 
+        {
+            print("getting user");
+            infoText.text = "in dependencies";
+            string name = user.DisplayName;
+            print(name);
+            string email = user.Email;
+            print(email);
+            System.Uri photo_url = user.PhotoUrl;
+            // The user's Id, unique to the Firebase project.
+            // Do NOT use this value to authenticate with your backend server, if you
+            // have one; use User.TokenAsync() instead.
+            string uid = user.UserId;
+        }
+
+    }
+
     public void SignInWithGoogle() { OnSignIn(); }
     public void SignOutFromGoogle() { OnSignOut(); }
 
     private void OnSignIn()
     {
+        CheckFirebaseDependencies();
         GoogleSignIn.Configuration = configuration;
         GoogleSignIn.Configuration.UseGameSignIn = false;
         GoogleSignIn.Configuration.RequestIdToken = true;
