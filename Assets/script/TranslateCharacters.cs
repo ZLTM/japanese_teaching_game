@@ -39,6 +39,7 @@ public class TranslateCharacters : MonoBehaviour
             }
         }
     }
+    /* Update succes rate on local, prepares data for DB */
     public void CorrecTranslation(string Romanji)
     {
         switch (Romanji)

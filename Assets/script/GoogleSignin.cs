@@ -24,6 +24,21 @@ public class GoogleSignin : MonoBehaviour
 
     private void CheckFirebaseDependencies()
     {
+        Firebase.Auth.FirebaseUser user = auth.CurrentUser;
+        if (user != null) 
+        {
+            print("getting user");
+            string name = user.DisplayName;
+            print(name);
+            string email = user.Email;
+            print(email);
+            System.Uri photo_url = user.PhotoUrl;
+            // The user's Id, unique to the Firebase project.
+            // Do NOT use this value to authenticate with your backend server, if you
+            // have one; use User.TokenAsync() instead.
+            string uid = user.UserId;
+        }
+
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
             if (task.IsCompleted)
@@ -137,4 +152,5 @@ public class GoogleSignin : MonoBehaviour
     }
 
     private void AddToInformation(string str) { infoText.text += "\n" + str; }
+    
 }

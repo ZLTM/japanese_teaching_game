@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class DialogueManager : MoveMenu {
@@ -19,6 +20,7 @@ public class DialogueManager : MoveMenu {
     List<int> numberDialogue = new List<int>();
     int i = 0;
     int j = 1;
+    private Image BlockButton;
     void Awake () {
 		sentences = new Queue<string>();
         names = new Queue<string>();
@@ -28,6 +30,7 @@ public class DialogueManager : MoveMenu {
         OtherFunctions = new Queue<UnityEvent>();
         dialogueTrigger = GameObject.Find("Char1").GetComponent<DialogueTrigger>();
 	}
+
 
 /* sets dialogue display for  DisplayNextSentence
 screenplayInfo: recieves object list including:
@@ -110,6 +113,8 @@ screenplayInfo: recieves object list including:
         }      
     }
 
+/* Typing animation for letters 
+sentence: string containing the full dialogue line*/
     IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
@@ -120,18 +125,29 @@ screenplayInfo: recieves object list including:
         }
     }
 
+/* Triggers a close dialogue */
     void EndDialogue ()
     {
         CloseDialogBox();
     }
 
+/* Closes the dialogue box */
     public void CloseDialogBox()
     {
         OpenDialog(); 
     }
 
-    void CallOtherFunctions(UnityEvent OtherFunction)
+    /* Allows to call a function set from the inspector */
+    public void CallOtherFunctions(UnityEvent OtherFunction)
     {
         OtherFunction.Invoke();
     }
+
+    /* Switch button image state blocking and unblocking the dialogue */
+    public void SwitchDialogButton()
+    {
+        BlockButton = GameObject.Find("ButtonBlock").GetComponent<Image>();
+        BlockButton.enabled  = !BlockButton.enabled;
+    }
+
 }
