@@ -7,10 +7,6 @@ using Google;
 
 public class RTDB : MonoBehaviour
 {
-    // [SerializeField] TMP_InputField username;
-    // [SerializeField] TMP_InputField email;
-    // [SerializeField] TMP_InputField nametoread;
-    // [SerializeField] TextMeshProUGUI data;
     
     StartScene KanjiValues;
     string PulledName;

@@ -5,7 +5,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-[System.Serializable]
 public class DialogueManager : MoveMenu {
     public TextMeshProUGUI  nameText;
     public TextMeshProUGUI  dialogueText;
@@ -30,7 +29,6 @@ public class DialogueManager : MoveMenu {
         OtherFunctions = new Queue<UnityEvent>();
         dialogueTrigger = GameObject.Find("Char1").GetComponent<DialogueTrigger>();
 	}
-
 
 /* sets dialogue display for  DisplayNextSentence
 screenplayInfo: recieves object list including:
@@ -70,18 +68,29 @@ screenplayInfo: recieves object list including:
         Sprite characterImage = characterImages.Peek();
         int position = positions.Peek();
         bool mirror = mirrors.Peek();
-        UnityEvent OtherFunction = OtherFunctions.Peek();
         dialogueTrigger.SetCharacter(characterImage, position, mirror);
-        CallOtherFunctions(OtherFunction);
+        UnityEvent OtherFunction = OtherFunctions.Peek();
+        // CallOtherFunctions(OtherFunction);
 
         string name = names.Peek();
         nameText.text = name; 
         
         if (j <= numberDialogue[charDialogue])
         {
-            string sentence = sentences.Dequeue();
-            dialogueText.text = sentence;
-            j++;
+            print("sentences"+sentences);
+            
+            if(sentences.Count > 0)
+            {
+                string sentence = sentences.Dequeue();
+                print("sentence"+sentence);
+                dialogueText.text = sentence;
+                j++;
+            }
+            else
+            {
+                EndDialogue();
+            }
+            
         }
         else
         {
@@ -144,10 +153,11 @@ sentence: string containing the full dialogue line*/
     }
 
     /* Switch button image state blocking and unblocking the dialogue */
-    public void SwitchDialogButton()
+    public void SwitchDialogButton(string State)
     {
+        print("switching");
         BlockButton = GameObject.Find("ButtonBlock").GetComponent<Image>();
-        BlockButton.enabled  = !BlockButton.enabled;
+        BlockButton.enabled  = bool.Parse(State);
     }
 
 }

@@ -11,13 +11,18 @@ public class TargetDrop : MonoBehaviour
     public bool State = false;
     bool updatedState;
     MoveCamera moveCamera;
+    GameObject BlockButton;
 
+    void Start()
+    {
+        BlockButton = GameObject.Find("Puzzleblock");
+    }
     void Update()
     {
         if (AState && BState && CState)
         {
             moveCamera = GameObject.Find("GM").GetComponent<MoveCamera>();
-            moveCamera.MoveToScene();
+            BlockButton.SetActive(false);
         }
     }
 
@@ -28,7 +33,7 @@ public class TargetDrop : MonoBehaviour
         BState = GameObject.Find("B").GetComponent<TargetDrop>().State;
         CState = GameObject.Find("C").GetComponent<TargetDrop>().State;
     }
-    void OnTriggerEnter2D (Collider2D other)
+    void OnTriggerEnter (Collider other)
     {
         if(other.name == answer)
         {

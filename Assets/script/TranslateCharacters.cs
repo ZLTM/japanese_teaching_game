@@ -1,7 +1,8 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
-public class TranslateCharacters : MonoBehaviour
+public class TranslateCharacters : MoveMenu
 {
     string TMPTextTranslation;
     string TMPTInputField;
@@ -9,14 +10,15 @@ public class TranslateCharacters : MonoBehaviour
     TouchScreenKeyboard keyboard;
     string keyboardValue;
     RTDB rtdb;
+    DialogueManager dialogueManager;
 
     void Start()
     {
         kanjiDict = GameObject.Find("GM").GetComponent<KanjiDict>();
+        dialogueManager = GameObject.Find("GM").GetComponent<DialogueManager>();
     }
     public void SetSelectedString(string originalText, string translatedText)
     {
-        print("SelectedString: "+translatedText);
         GameObject.Find("dialogTranslation").GetComponent<TextMeshProUGUI>().text = originalText + " " + translatedText;
     }
 
@@ -26,11 +28,15 @@ public class TranslateCharacters : MonoBehaviour
         TMPTInputField = GameObject.Find("InputField").GetComponent<TMP_InputField>().text;
         foreach (string key in kanjiDict.kanjiRomanji.Keys)
         {
+            key.ToLower();
+            TMPTextTranslation.ToLower();
             if(TMPTextTranslation == key)
             {
                 if (TMPTInputField.Trim() == kanjiDict.kanjiRomanji[key].Trim())
                 {
                     SetSelectedString(TMPTextTranslation, TMPTInputField);
+                    dialogueManager.SwitchDialogButton("False");
+                    StartCoroutine(WaitTranslation());
                 }
                 else
                 {
@@ -39,8 +45,15 @@ public class TranslateCharacters : MonoBehaviour
             }
         }
     }
+
+    IEnumerator WaitTranslation ()
+    {
+        yield return new WaitForSeconds(1);
+        OpenTranslation();
+    }
+
     /* Update succes rate on local, prepares data for DB */
-    public void CorrecTranslation(string Romanji)
+    public void CorrectTranslation(string Romanji)
     {
         switch (Romanji)
         {
@@ -80,7 +93,7 @@ public class TranslateCharacters : MonoBehaviour
         }
     }
 
-    public void IncorrecTranslation(string Romanji)
+    public void IncorrectTranslation(string Romanji)
     {
         switch (Romanji)
         {
