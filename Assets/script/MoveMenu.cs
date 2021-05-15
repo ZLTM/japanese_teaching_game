@@ -78,6 +78,12 @@ public class MoveMenu : MonoBehaviour
         SetKanjiContent();
     }
 
+/* Opens and closes panels
+pane: panel to interact with
+initialiter: object to tell the panel state
+x: movement by x
+y: movement by y
+speed: movement speed */
     public void MovePanel(GameObject Panel, GameObject Initialiter, float x, float y, float Speed)
     {
         bool isActive = Initialiter.activeSelf;
@@ -115,9 +121,10 @@ public class MoveMenu : MonoBehaviour
 
         rtdb.Read_Data(clickedButtonName);
     }
+/* to delete 
     public void MoveGuiElement()
     {
         print("update");
-    }
+    } */
 
 }

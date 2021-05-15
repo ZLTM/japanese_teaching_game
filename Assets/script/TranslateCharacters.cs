@@ -7,9 +7,9 @@ public class TranslateCharacters : MoveMenu
     string TMPTextTranslation;
     string TMPTInputField;
     KanjiDict kanjiDict;
-    TouchScreenKeyboard keyboard;
+/*     TouchScreenKeyboard keyboard;
     string keyboardValue;
-    RTDB rtdb;
+    RTDB rtdb; */
     DialogueManager dialogueManager;
 
     void Start()
@@ -48,7 +48,7 @@ public class TranslateCharacters : MoveMenu
 
     IEnumerator WaitTranslation ()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         OpenTranslation();
     }
 

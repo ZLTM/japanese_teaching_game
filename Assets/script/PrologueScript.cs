@@ -6,6 +6,7 @@ public class PrologueScript : MonoBehaviour
 {
     public List<screenplayInfo> screenplay = new List<screenplayInfo>();
 }
+/* properties of every screenplay paragraph */
 
 [System.Serializable]
 public class screenplayInfo

@@ -419,6 +419,7 @@ GameObject:
   - component: {fileID: 43323616}
   - component: {fileID: 43323615}
   - component: {fileID: 43323614}
+  - component: {fileID: 43323618}
   m_Layer: 0
   m_Name: DnDYon
   m_TagString: Untagged
@@ -494,6 +495,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43323612}
   m_CullTransparentMesh: 1
+--- !u!64 &43323618
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43323612}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &43323619
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1238,7 +1253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0016923079, y: 0.66950005}
   m_AnchorMax: {x: 0.13378125, y: 0.7156112}
-  m_AnchoredPosition: {x: -0.16003418, y: -0.5}
+  m_AnchoredPosition: {x: -0.16015625, y: -0.5}
   m_SizeDelta: {x: -9, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165040841
@@ -1759,6 +1774,7 @@ GameObject:
   - component: {fileID: 329699914}
   - component: {fileID: 329699913}
   - component: {fileID: 329699912}
+  - component: {fileID: 329699916}
   m_Layer: 0
   m_Name: DnDRoku
   m_TagString: Untagged
@@ -1834,6 +1850,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329699910}
   m_CullTransparentMesh: 1
+--- !u!64 &329699916
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329699910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &329699917
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2239,6 +2269,7 @@ GameObject:
   - component: {fileID: 480539373}
   - component: {fileID: 480539372}
   - component: {fileID: 480539371}
+  - component: {fileID: 480539375}
   m_Layer: 0
   m_Name: DnDNi
   m_TagString: Untagged
@@ -2314,6 +2345,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480539369}
   m_CullTransparentMesh: 1
+--- !u!64 &480539375
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480539369}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &480539376
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3994,6 +4039,7 @@ GameObject:
   - component: {fileID: 872574532}
   - component: {fileID: 872574531}
   - component: {fileID: 872574530}
+  - component: {fileID: 872574534}
   m_Layer: 0
   m_Name: DnDIchi
   m_TagString: Untagged
@@ -4069,6 +4115,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872574528}
   m_CullTransparentMesh: 1
+--- !u!64 &872574534
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872574528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &872574535
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4534,6 +4594,7 @@ GameObject:
   - component: {fileID: 923534193}
   - component: {fileID: 923534192}
   - component: {fileID: 923534191}
+  - component: {fileID: 923534195}
   m_Layer: 0
   m_Name: DnDSan
   m_TagString: Untagged
@@ -4609,6 +4670,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923534189}
   m_CullTransparentMesh: 1
+--- !u!64 &923534195
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923534189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &923534196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5333,6 +5408,7 @@ GameObject:
   - component: {fileID: 1288557998}
   - component: {fileID: 1288557997}
   - component: {fileID: 1288557996}
+  - component: {fileID: 1288558000}
   m_Layer: 0
   m_Name: DnDNana
   m_TagString: Untagged
@@ -5408,6 +5484,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288557994}
   m_CullTransparentMesh: 1
+--- !u!64 &1288558000
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288557994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1288558001
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6736,6 +6826,7 @@ GameObject:
   - component: {fileID: 1702419703}
   - component: {fileID: 1702419702}
   - component: {fileID: 1702419701}
+  - component: {fileID: 1702419705}
   m_Layer: 0
   m_Name: DnDGo
   m_TagString: Untagged
@@ -6811,6 +6902,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702419699}
   m_CullTransparentMesh: 1
+--- !u!64 &1702419705
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702419699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1702419706
 MeshRenderer:
   m_ObjectHideFlags: 0

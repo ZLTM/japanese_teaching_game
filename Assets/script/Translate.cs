@@ -3,12 +3,12 @@ using UnityEngine;
 using TMPro;
 using RotaryHeart.Lib.SerializableDictionary;
 [System.Serializable]
-public class MyDictionary : SerializableDictionaryBase<string, string> { 
+public class TranslateDictionary : SerializableDictionaryBase<string, string> { 
 }
 
 public class Translate : MoveMenu
 {
-    public MyDictionary KanjiValue;
+    public TranslateDictionary KanjiValue;
     public TextMeshProUGUI TMPTextDialog;
     TextMeshProUGUI TMPTextTranslation;
 

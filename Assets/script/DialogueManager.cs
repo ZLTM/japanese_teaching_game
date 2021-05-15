@@ -124,6 +124,8 @@ screenplayInfo: recieves object list including:
 
 /* Typing animation for letters 
 sentence: string containing the full dialogue line*/
+/*  
+to delete
     IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
@@ -132,7 +134,7 @@ sentence: string containing the full dialogue line*/
             dialogueText.text += letter;
             yield return null;
         }
-    }
+    } */
 
 /* Triggers a close dialogue */
     void EndDialogue ()
