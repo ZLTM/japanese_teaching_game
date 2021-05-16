@@ -37,10 +37,12 @@ public class TranslateCharacters : MoveMenu
                     SetSelectedString(TMPTextTranslation, TMPTInputField);
                     dialogueManager.SwitchDialogButton("False");
                     StartCoroutine(WaitTranslation());
+                    CorrectTranslation(kanjiDict.kanjiRomanji[key]);
                 }
                 else
                 {
                     print("wrong translation try again");
+                    IncorrectTranslation(kanjiDict.kanjiRomanji[key]);
                 }
             }
         }
