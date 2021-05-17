@@ -10,10 +10,13 @@ public class MoveMenu : MonoBehaviour
     public GameObject TranslationInit;
     public GameObject DialogBoxInit;
     public GameObject KanjiInfoInit;
+    
+    public GameObject PuzzleInit;
     public GameObject Kanji;
     public GameObject Translation;
     public GameObject DialogBox;
     public GameObject KanjiInfo;
+    public GameObject Puzzle;
     Button selectedKanji;
     Sprite kanjiImage;
     string kanjiReading;
@@ -76,6 +79,11 @@ public class MoveMenu : MonoBehaviour
         }
         SetKanjiImage();
         SetKanjiContent();
+    }
+
+    public void OpenPuzzleInfo()
+    {
+        MovePanel(Puzzle, PuzzleInit, 450f, 0f, 0.1f);
     }
 
 /* Opens and closes panels

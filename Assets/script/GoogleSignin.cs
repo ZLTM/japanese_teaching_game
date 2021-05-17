@@ -39,6 +39,11 @@ void Awake() {
     };
 }
 
+void start() {
+    OnSignIn();
+}
+
+
 public void OnSignIn() {
     GoogleSignIn.Configuration = configuration;
     GoogleSignIn.Configuration.UseGameSignIn = false;
