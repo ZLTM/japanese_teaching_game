@@ -82,7 +82,7 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task) {
         AddStatusText("Welcome: " + task.Result.DisplayName + "!");
                 string json = JsonUtility.ToJson(user);
 
-        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child(task.Result.UserId).SetRawJsonValueAsync(json).ContinueWith(task =>
+        FirebaseDatabase.DefaultInstance.RootReference.Child(task.Result.UserId).SetRawJsonValueAsync(json).ContinueWith(task =>
         {
             if (task.IsCompleted)
             {

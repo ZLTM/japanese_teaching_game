@@ -54,7 +54,7 @@ public class RTDB : MonoBehaviour
 
         string json = JsonUtility.ToJson(user);
 
-        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child(user.UserId).SetRawJsonValueAsync(json).ContinueWith(task =>
+        FirebaseDatabase.DefaultInstance.RootReference.Child(user.UserId).SetRawJsonValueAsync(json).ContinueWith(task =>
         {
             if (task.IsCompleted)
             {
@@ -69,7 +69,7 @@ public class RTDB : MonoBehaviour
 
     public void Read_Data(string KanjiQuery)
     {
-        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child(user.UserId).GetValueAsync().ContinueWith(task =>
+        FirebaseDatabase.DefaultInstance.RootReference.Child(user.UserId).GetValueAsync().ContinueWith(task =>
         {
             if (task.IsCompleted)
             {
