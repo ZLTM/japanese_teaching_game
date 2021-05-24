@@ -12,6 +12,9 @@ public class TargetDrop : MonoBehaviour
     bool updatedState;
     MoveCamera moveCamera;
     GameObject BlockButton;
+    public AudioSource audioSource;
+    public AudioClip clip;
+    public float volume=0.5f;
 
     void Start()
     {
@@ -35,6 +38,7 @@ public class TargetDrop : MonoBehaviour
     }
     void OnTriggerEnter (Collider other)
     {
+        audioSource.PlayOneShot(clip, volume); 
         if(other.name == answer)
         {
             UpdateState();
