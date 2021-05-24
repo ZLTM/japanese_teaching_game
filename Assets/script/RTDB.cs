@@ -15,6 +15,8 @@ public class RTDB : MonoBehaviour
     // Start is called before the first frame update
 
     User user = new User();
+    
+    GoogleSignInUser googleSignInUser;
 
     void Start() 
     {
@@ -31,6 +33,7 @@ public class RTDB : MonoBehaviour
     internal void savedata(Task<GoogleSignInUser> task)
     {
         user.UserName = task.Result.DisplayName;
+        user.Email = googleSignInUser.Email;
         user.Email = task.Result.Email;
         user.Ichi = KanjiValues.IchiPercentage;
         user.Ni = KanjiValues.NiPercentage;
@@ -45,7 +48,7 @@ public class RTDB : MonoBehaviour
 
         string json = JsonUtility.ToJson(user);
 
-        FirebaseDatabase.DefaultInstance.RootReference.Child(user.UserName).SetRawJsonValueAsync(json).ContinueWith(task =>
+        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child(googleSignInUser.Email).SetRawJsonValueAsync(json).ContinueWith(task =>
         {
             if (task.IsCompleted)
             {

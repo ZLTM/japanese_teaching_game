@@ -30,6 +30,8 @@ public string webClientId = "<your client id here>";
 
 private GoogleSignInConfiguration configuration;
 
+GoogleSignInUser googleSignInUser;
+
 // Defer the configuration creation until Awake so the web Client ID
 // Can be set via the property inspector in the Editor.
 void Awake() {

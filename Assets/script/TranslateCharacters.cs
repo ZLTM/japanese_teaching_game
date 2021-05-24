@@ -37,12 +37,12 @@ public class TranslateCharacters : MoveMenu
                     SetSelectedString(TMPTextTranslation, TMPTInputField);
                     dialogueManager.SwitchDialogButton("False");
                     StartCoroutine(WaitTranslation());
-                    CorrectTranslation(kanjiDict.kanjiRomanji[key]);
+                    CorrectTranslation(TMPTInputField);
                 }
                 else
                 {
                     print("wrong translation try again");
-                    IncorrectTranslation(kanjiDict.kanjiRomanji[key]);
+                    IncorrectTranslation(TMPTInputField);
                 }
             }
         }
@@ -57,36 +57,38 @@ public class TranslateCharacters : MoveMenu
     /* Update succes rate on local, prepares data for DB */
     public void CorrectTranslation(string Romanji)
     {
+        Romanji.ToLower();
         switch (Romanji)
         {
-        case "Ichi":
+        case "ichi":
             this.GetComponent<StartScene>().IchiSuccess++;
+            print(this.GetComponent<StartScene>().IchiSuccess);
             break;
-        case "Ni":
+        case "ni":
             this.GetComponent<StartScene>().NiSuccess++;
             break;
-        case "San":
+        case "san":
             this.GetComponent<StartScene>().SanSuccess++;
             break;
-        case "Yon":
+        case "yon":
             this.GetComponent<StartScene>().YonSuccess++;
             break;
-        case "Go":
+        case "go":
             this.GetComponent<StartScene>().GoSuccess++;
             break;
-        case "Roku":
+        case "roku":
             this.GetComponent<StartScene>().RokuSuccess++;
             break;
-        case "Nana":
+        case "nana":
             this.GetComponent<StartScene>().NanaSuccess++;
             break;
-        case "Hachi":
+        case "hachi":
             this.GetComponent<StartScene>().HachiSuccess++;
             break;
-        case "Juu":
+        case "juu":
             this.GetComponent<StartScene>().JuuSuccess++;
             break;
-        case "Hi":
+        case "hi":
             this.GetComponent<StartScene>().HiSuccess++;
             break;
         default:
@@ -97,36 +99,37 @@ public class TranslateCharacters : MoveMenu
 
     public void IncorrectTranslation(string Romanji)
     {
+        Romanji.ToLower();
         switch (Romanji)
         {
-        case "Ichi":
+        case "ichi":
             this.GetComponent<StartScene>().IchiFailure++;
             break;
-        case "Ni":
+        case "ni":
             this.GetComponent<StartScene>().NiFailure++;
             break;
-        case "San":
+        case "san":
             this.GetComponent<StartScene>().SanFailure++;
             break;
-        case "Yon":
+        case "yon":
             this.GetComponent<StartScene>().YonFailure++;
             break;
-        case "Go":
+        case "go":
             this.GetComponent<StartScene>().GoFailure++;
             break;
-        case "Roku":
+        case "roku":
             this.GetComponent<StartScene>().RokuFailure++;
             break;
-        case "Nana":
+        case "nana":
             this.GetComponent<StartScene>().NanaFailure++;
             break;
-        case "Hachi":
+        case "hachi":
             this.GetComponent<StartScene>().HachiFailure++;
             break;
-        case "Juu":
+        case "juu":
             this.GetComponent<StartScene>().JuuFailure++;
             break;
-        case "Hi":
+        case "hi":
             this.GetComponent<StartScene>().HiFailure++;
             break;
         default:

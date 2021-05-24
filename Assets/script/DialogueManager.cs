@@ -77,12 +77,10 @@ screenplayInfo: recieves object list including:
         
         if (j <= numberDialogue[charDialogue])
         {
-            print("sentences"+sentences);
             
             if(sentences.Count > 0)
             {
                 string sentence = sentences.Dequeue();
-                print("sentence"+sentence);
                 dialogueText.text = sentence;
                 j++;
             }
@@ -157,7 +155,6 @@ to delete
     /* Switch button image state blocking and unblocking the dialogue */
     public void SwitchDialogButton(string State)
     {
-        print("switching");
         BlockButton = GameObject.Find("ButtonBlock").GetComponent<Image>();
         BlockButton.enabled  = bool.Parse(State);
     }

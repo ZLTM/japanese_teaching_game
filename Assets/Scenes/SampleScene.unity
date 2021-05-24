@@ -2779,26 +2779,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  IchiSuccess: 1
-  IchiFailure: 2
-  NiSuccess: 2
+  IchiSuccess: 0
+  IchiFailure: 0
+  NiSuccess: 0
   NiFailure: 0
   SanSuccess: 0
-  SanFailure: 1
-  YonSuccess: 2
-  YonFailure: 7
-  GoSuccess: 6
-  GoFailure: 4
-  RokuSuccess: 6
-  RokuFailure: 9
+  SanFailure: 0
+  YonSuccess: 0
+  YonFailure: 0
+  GoSuccess: 0
+  GoFailure: 0
+  RokuSuccess: 0
+  RokuFailure: 0
   NanaSuccess: 0
-  NanaFailure: 5
-  HachiSuccess: 3
-  HachiFailure: 7
-  JuuSuccess: 7
-  JuuFailure: 5
-  HiSuccess: 4
-  HiFailure: 2
+  NanaFailure: 0
+  HachiSuccess: 0
+  HachiFailure: 0
+  JuuSuccess: 0
+  JuuFailure: 0
+  HiSuccess: 0
+  HiFailure: 0
 --- !u!114 &548706935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2932,7 +2932,19 @@ MonoBehaviour:
     CharacterPosition: 1
     OtherFunctions:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 548706936}
+          m_TargetAssemblyTypeName: TranslateCharacters, Assembly-CSharp
+          m_MethodName: CorrectTranslation
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ichi
+            m_BoolArgument: 0
+          m_CallState: 2
     sentences:
     - Sentences can be pushed forward
     - press on the next kanji
@@ -2976,6 +2988,18 @@ MonoBehaviour:
             m_StringArgument: False
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 548706936}
+          m_TargetAssemblyTypeName: TranslateCharacters, Assembly-CSharp
+          m_MethodName: CorrectTranslation
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ni
+            m_BoolArgument: 0
+          m_CallState: 2
     sentences:
     - 'Dialogue continues after translation '
     - New data is saved on firebase
@@ -2989,6 +3013,30 @@ MonoBehaviour:
         - m_Target: {fileID: 548706932}
           m_TargetAssemblyTypeName: MoveCamera, Assembly-CSharp
           m_MethodName: MoveToPuzzle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 548706936}
+          m_TargetAssemblyTypeName: TranslateCharacters, Assembly-CSharp
+          m_MethodName: CorrectTranslation
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Ichi
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 416179042}
+          m_TargetAssemblyTypeName: RTDB, Assembly-CSharp
+          m_MethodName: Save_Data
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5427,7 +5475,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 548706935}
+      - m_Target: {fileID: 548706939}
         m_TargetAssemblyTypeName: MoveMenu, Assembly-CSharp
         m_MethodName: OpenKanjiInfo
         m_Mode: 1
@@ -8615,8 +8663,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
