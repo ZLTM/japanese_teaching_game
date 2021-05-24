@@ -46,6 +46,19 @@ public class StartScene : MonoBehaviour
     public double HiPercentage;
     // public List<KanjiRatings> kanjiRatings = new List<KanjiRatings>();
     PrologueScript prologueScript;
+    void Awake() 
+    {
+        IchiPercentage = IchiSuccess/(IchiSuccess+IchiFailure);
+        NiPercentage = NiSuccess/(NiSuccess+NiFailure);
+        SanPercentage = SanSuccess/(SanSuccess+SanFailure);
+        YonPercentage = YonSuccess/(YonSuccess+YonFailure);
+        GoPercentage = GoSuccess/(GoSuccess+GoFailure);
+        RokuPercentage = RokuSuccess/(RokuSuccess+RokuFailure);
+        NanaPercentage = NanaSuccess/(NanaSuccess+NanaFailure);
+        HachiPercentage = HachiSuccess/(HachiSuccess+HachiFailure);
+        JuuPercentage = JuuSuccess/(JuuSuccess+JuuFailure);
+        HiPercentage = HiSuccess/(HiSuccess+HiFailure);
+    }
     void Start()
     {
         prologueScript = this.GetComponent<PrologueScript>();

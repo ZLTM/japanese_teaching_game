@@ -22,7 +22,14 @@ public class RTDB : MonoBehaviour
     {
         UpdatedName = "";
         KanjiValues = GameObject.Find("GM").GetComponent<StartScene>();
-        Save_Data();
+        // Save_Data();
+        print(KanjiValues.IchiPercentage);
+    }
+
+    void update() {
+        
+        KanjiValues = GameObject.Find("GM").GetComponent<StartScene>();
+        print(KanjiValues.IchiPercentage);
     }
 
     public void Save_Data() 
@@ -32,9 +39,8 @@ public class RTDB : MonoBehaviour
     }
     internal void savedata(Task<GoogleSignInUser> task)
     {
-        user.UserName = task.Result.DisplayName;
-        user.Email = googleSignInUser.Email;
-        user.Email = task.Result.Email;
+        user.UserId = task.Result.UserId;
+        // user.Email = googleSignInUser.Email;
         user.Ichi = KanjiValues.IchiPercentage;
         user.Ni = KanjiValues.NiPercentage;
         user.San = KanjiValues.SanPercentage;
@@ -48,7 +54,7 @@ public class RTDB : MonoBehaviour
 
         string json = JsonUtility.ToJson(user);
 
-        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child(googleSignInUser.Email).SetRawJsonValueAsync(json).ContinueWith(task =>
+        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child(user.UserId).SetRawJsonValueAsync(json).ContinueWith(task =>
         {
             if (task.IsCompleted)
             {
@@ -63,15 +69,14 @@ public class RTDB : MonoBehaviour
 
     public void Read_Data(string KanjiQuery)
     {
-        FirebaseDatabase.DefaultInstance.RootReference.Child(user.UserName).GetValueAsync().ContinueWith(task =>
+        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child(user.UserId).GetValueAsync().ContinueWith(task =>
         {
             if (task.IsCompleted)
             {
                 Debug.Log("successfull");
                 DataSnapshot snapshot = task.Result;
                 PulledName = snapshot.Child(KanjiQuery).Value.ToString();
-                Debug.Log("user: "+snapshot.Child("UserName").Value.ToString());
-                Debug.Log("email: "+snapshot.Child("Email").Value.ToString());
+                Debug.Log("user: "+snapshot.Child("UserId").Value.ToString());
             }
             else
             {

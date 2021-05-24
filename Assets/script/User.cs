@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class User 
 {
-    public string UserName;
-    public string Email;
+    // public string UserName;
+    // public string Email;
+    public string UserId;
     public double Ichi;
     public double Ni;
     public double San;

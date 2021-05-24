@@ -70,6 +70,8 @@ public class MoveMenu : MonoBehaviour
 
     public void OpenKanjiInfo()
     {
+        SetKanjiImage();
+        SetKanjiContent();
         MovePanel(KanjiInfo, KanjiInfoInit, -350f, 0f, 0.1f);
 
         bool isActive = KanjiInit.activeSelf;
@@ -77,13 +79,11 @@ public class MoveMenu : MonoBehaviour
         {
             OpenKanji();
         }
-        SetKanjiImage();
-        SetKanjiContent();
     }
 
     public void OpenPuzzleInfo()
     {
-        MovePanel(Puzzle, PuzzleInit, 450f, 0f, 0.1f);
+        MovePanel(Puzzle, PuzzleInit, 500f, 0f, 0.1f);
     }
 
 /* Opens and closes panels
@@ -117,6 +117,7 @@ speed: movement speed */
 
     public void SetKanjiContent()
     {
+        rtdb.Read_Data(clickedButtonName);
         clickedButtonName = EventSystem.current.currentSelectedGameObject.name;
 
         kanjiReading = GameObject.Find(clickedButtonName).GetComponent<kanjiDetails>().Readings;
@@ -127,7 +128,6 @@ speed: movement speed */
         selectedDescription = GameObject.Find("SelectedDescription").GetComponent<TextMeshProUGUI>();
         selectedDescription.text = kanjiDescription;
 
-        rtdb.Read_Data(clickedButtonName);
     }
 /* to delete 
     public void MoveGuiElement()

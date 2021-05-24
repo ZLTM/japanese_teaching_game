@@ -2779,25 +2779,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  IchiSuccess: 0
+  IchiSuccess: 1
   IchiFailure: 0
-  NiSuccess: 0
+  NiSuccess: 1
   NiFailure: 0
-  SanSuccess: 0
+  SanSuccess: 1
   SanFailure: 0
-  YonSuccess: 0
+  YonSuccess: 1
   YonFailure: 0
-  GoSuccess: 0
+  GoSuccess: 1
   GoFailure: 0
-  RokuSuccess: 0
+  RokuSuccess: 1
   RokuFailure: 0
-  NanaSuccess: 0
+  NanaSuccess: 1
   NanaFailure: 0
-  HachiSuccess: 0
+  HachiSuccess: 1
   HachiFailure: 0
-  JuuSuccess: 0
+  JuuSuccess: 1
   JuuFailure: 0
-  HiSuccess: 0
+  HiSuccess: 1
   HiFailure: 0
 --- !u!114 &548706935
 MonoBehaviour:
@@ -8052,7 +8052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '%%'
+  m_text: ???
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
