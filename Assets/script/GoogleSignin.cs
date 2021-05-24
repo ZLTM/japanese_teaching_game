@@ -37,9 +37,11 @@ void Awake() {
         WebClientId = webClientId,
         RequestIdToken = true
     };
+    OnSignIn();
 }
 
 void start() {
+    
     OnSignIn();
 }
 
@@ -77,13 +79,13 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task) {
         }
     }
     } else if(task.IsCanceled) {
-    AddStatusText("Canceled");
+        AddStatusText("Canceled");
     } else  
     {
         AddStatusText("Welcome: " + task.Result.DisplayName + "!");
                 string json = JsonUtility.ToJson(user);
 
-        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child(task.Result.Email).SetRawJsonValueAsync(json).ContinueWith(task =>
+        FirebaseDatabase.DefaultInstance.RootReference.Child("User").Child(task.Result.DisplayName).SetRawJsonValueAsync(json).ContinueWith(task =>
         {
             if (task.IsCompleted)
             {

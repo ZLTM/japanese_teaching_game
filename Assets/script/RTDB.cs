@@ -20,6 +20,7 @@ public class RTDB : MonoBehaviour
     {
         UpdatedName = "";
         KanjiValues = GameObject.Find("GM").GetComponent<StartScene>();
+        Save_Data();
     }
 
     public void Save_Data() 
