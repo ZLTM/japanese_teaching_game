@@ -42,6 +42,11 @@ screenplayInfo: recieves object list including:
 	{
         names.Clear();
         sentences.Clear();
+        characterImages.Clear();
+        mirrors.Clear();
+        positions.Clear();
+        OtherFunctions.Clear();
+
         k = 0;
         charDialogue = 0;
         countFunctions = 0;
@@ -169,6 +174,20 @@ to delete
 /* Triggers a close dialogue */
     void EndDialogue ()
     {
+        names.Clear();
+        sentences.Clear();
+        characterImages.Clear();
+        mirrors.Clear();
+        positions.Clear();
+        OtherFunctions.Clear();
+        
+        charDialogue = 0;
+        countSentence = 0;
+        countFunctions = 0;
+        sentenceCount = 1;
+        functionCount = 1;
+        k = 0;
+
         CloseDialogBox();
     }
 
