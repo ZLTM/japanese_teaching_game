@@ -20,7 +20,9 @@ public class DialogueManager : MoveMenu {
     List<int> numberFunction = new List<int>();
     int countSentence = 0;
     int countFunctions = 0;
-    int j = 1;
+    int sentenceCount = 1;
+    
+    int functionCount = 1;
     int k = 0;
     private Image BlockButton;
     void Awake () {
@@ -69,8 +71,11 @@ screenplayInfo: recieves object list including:
             {
                 foreach (UnityEvent func in screenplay.OtherFunctions)
                 {
-                    OtherFunctions.Enqueue(func);
-                    countFunctions++;
+                    if (func != null)
+                    {
+                        OtherFunctions.Enqueue(func);
+                        countFunctions++;
+                    }
                 }
             }
 
@@ -79,7 +84,6 @@ screenplayInfo: recieves object list including:
             countSentence = 0;
             countFunctions = 0;
             charDialogue++;
-            // DisplayNextSentence();
         }
         DisplayNextSentence();
     }
@@ -95,14 +99,24 @@ screenplayInfo: recieves object list including:
 
         string name = names.Peek();
         nameText.text = name; 
+
+
         
         if (sentences.Count > 0)  
         {
-            if(j <= numberDialogue[k])  
+            if(functionCount <= numberFunction[k] && OtherFunctions.Count > 0)  
+            {
+                UnityEvent func = OtherFunctions.Dequeue();
+                CallOtherFunctions(func);
+                functionCount++;
+            }
+
+
+            if(sentenceCount <= numberDialogue[k])  
             {
                 string sentence = sentences.Dequeue();
                 dialogueText.text = sentence;
-                j++;
+                sentenceCount++;
             }
             else
             {
@@ -117,7 +131,6 @@ screenplayInfo: recieves object list including:
                 }
                 else
                 {
-                    print("number of functions "+numberFunction[k]);
                     name = names.Peek(); 
                     nameText.text = name;
 
@@ -125,29 +138,9 @@ screenplayInfo: recieves object list including:
                     position = positions.Peek();
                     mirror = mirrors.Peek();
                     dialogueTrigger.SetCharacter(characterImage, position, mirror);
-            
-                    while(numberFunction[k] > 0)
-                    {
-                    print("inside while");
-                        UnityEvent func = OtherFunctions.Dequeue();
-                        CallOtherFunctions(func);
-                    }   
 
-        /*             while(numberFunction[k] > 0)
-                    {
-                    print("inside while");
-                        try
-                        {
-                            UnityEvent func = OtherFunctions.Dequeue();
-                            CallOtherFunctions(func);
-                        }
-                        catch (System.Exception ex)
-                        {
-                            print(ex);
-                        }
-                    }   */
-
-                    j=1; 
+                    sentenceCount=1; 
+                    functionCount=1;
                     k++;
                     // DisplayNextSentence();
                 }

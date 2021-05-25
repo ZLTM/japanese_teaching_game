@@ -62,7 +62,6 @@ public class TranslateCharacters : MoveMenu
         {
         case "ichi":
             this.GetComponent<StartScene>().IchiSuccess++;
-            print(this.GetComponent<StartScene>().IchiSuccess);
             break;
         case "ni":
             this.GetComponent<StartScene>().NiSuccess++;
