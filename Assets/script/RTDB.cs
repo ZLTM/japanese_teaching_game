@@ -23,7 +23,6 @@ public class RTDB : MonoBehaviour
         UpdatedName = "";
         KanjiValues = GameObject.Find("GM").GetComponent<StartScene>();
         // Save_Data();
-        print(KanjiValues.IchiPercentage);
     }
 
     void update() {

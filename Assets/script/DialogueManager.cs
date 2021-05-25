@@ -17,8 +17,11 @@ public class DialogueManager : MoveMenu {
     private Queue<UnityEvent> OtherFunctions;
     int charDialogue = 0;
     List<int> numberDialogue = new List<int>();
-    int i = 0;
+    List<int> numberFunction = new List<int>();
+    int countSentence = 0;
+    int countFunctions = 0;
     int j = 1;
+    int k = 0;
     private Image BlockButton;
     void Awake () {
 		sentences = new Queue<string>();
@@ -37,25 +40,46 @@ screenplayInfo: recieves object list including:
 	{
         names.Clear();
         sentences.Clear();
+        k = 0;
+        charDialogue = 0;
+        countFunctions = 0;
         foreach (screenplayInfo screenplay in screenplayInfo)
         {
             numberDialogue.Add(999);
             numberDialogue[charDialogue] = 0;
 
-            characterImages.Enqueue(screenplay.CharacterImage);
-            names.Enqueue(screenplay.name);
-            positions.Enqueue(screenplay.CharacterPosition);
-            OtherFunctions.Enqueue(screenplay.OtherFunctions);
-            mirrors.Enqueue(screenplay.mirrowed);
+            numberFunction.Add(999);
+            numberFunction[charDialogue] = 0;
 
-            foreach (string sentence in screenplay.sentences)
+            names.Enqueue(screenplay.name);
+            characterImages.Enqueue(screenplay.CharacterImage);
+            mirrors.Enqueue(screenplay.mirrowed);
+            positions.Enqueue(screenplay.CharacterPosition);
+
+            if (screenplay.sentences.Count > 0)
             {
-                sentences.Enqueue(sentence);
-                i++;
+                foreach (string sentence in screenplay.sentences)
+                {
+                    sentences.Enqueue(sentence);
+                    countSentence++;
+                }
             }
-            numberDialogue[charDialogue] = i;
+
+            if (screenplay.OtherFunctions.Count > 0)
+            {
+                foreach (UnityEvent func in screenplay.OtherFunctions)
+                {
+                    OtherFunctions.Enqueue(func);
+                    countFunctions++;
+                }
+            }
+
+            numberDialogue[charDialogue] = countSentence;
+            numberFunction[charDialogue] = countFunctions;
+            countSentence = 0;
+            countFunctions = 0;
             charDialogue++;
-            i=0;
+            // DisplayNextSentence();
         }
         DisplayNextSentence();
     }
@@ -63,22 +87,18 @@ screenplayInfo: recieves object list including:
 /* displays sentences and changes character according to the screenplay */
     public void DisplayNextSentence()
     {
-        charDialogue=0;
 
         Sprite characterImage = characterImages.Peek();
         int position = positions.Peek();
         bool mirror = mirrors.Peek();
         dialogueTrigger.SetCharacter(characterImage, position, mirror);
-        UnityEvent OtherFunction = OtherFunctions.Peek();
-        // CallOtherFunctions(OtherFunction);
 
         string name = names.Peek();
         nameText.text = name; 
         
-        if (j <= numberDialogue[charDialogue])
+        if (sentences.Count > 0)  
         {
-            
-            if(sentences.Count > 0)
+            if(j <= numberDialogue[k])  
             {
                 string sentence = sentences.Dequeue();
                 dialogueText.text = sentence;
@@ -86,38 +106,57 @@ screenplayInfo: recieves object list including:
             }
             else
             {
-                EndDialogue();
-            }
+                characterImages.Dequeue();
+                positions.Dequeue();
+                mirrors.Dequeue();
+                names.Dequeue();
+                
+                if(names.Count==0)
+                {
+                    EndDialogue(); 
+                }
+                else
+                {
+                    print("number of functions "+numberFunction[k]);
+                    name = names.Peek(); 
+                    nameText.text = name;
+
+                    characterImage = characterImages.Peek();
+                    position = positions.Peek();
+                    mirror = mirrors.Peek();
+                    dialogueTrigger.SetCharacter(characterImage, position, mirror);
             
-        }
+                    while(numberFunction[k] > 0)
+                    {
+                    print("inside while");
+                        UnityEvent func = OtherFunctions.Dequeue();
+                        CallOtherFunctions(func);
+                    }   
+
+        /*             while(numberFunction[k] > 0)
+                    {
+                    print("inside while");
+                        try
+                        {
+                            UnityEvent func = OtherFunctions.Dequeue();
+                            CallOtherFunctions(func);
+                        }
+                        catch (System.Exception ex)
+                        {
+                            print(ex);
+                        }
+                    }   */
+
+                    j=1; 
+                    k++;
+                    // DisplayNextSentence();
+                }
+            }
+        }   
         else
         {
-            characterImages.Dequeue();
-            positions.Dequeue();
-            mirrors.Dequeue();
-            names.Dequeue();
-            OtherFunctions.Dequeue();
-            if(names.Count==0)
-            {
-                EndDialogue(); 
-            }
-            else
-            {
-                name = names.Peek(); 
-                nameText.text = name;
-
-                characterImage = characterImages.Peek();
-                position = positions.Peek();
-                mirror = mirrors.Peek();
-                position = positions.Peek();
-                OtherFunction = OtherFunctions.Peek();
-                dialogueTrigger.SetCharacter(characterImage, position, mirror);
-                CallOtherFunctions(OtherFunction);
-
-                j=1; 
-                DisplayNextSentence();
-            }
-        }      
+            EndDialogue(); 
+        }
     }
 
 /* Typing animation for letters 

@@ -17,7 +17,7 @@ public class screenplayInfo
 
     [Range(1, 2)]
 	public int CharacterPosition = 1;
-    public UnityEvent OtherFunctions;
+    public List<UnityEvent> OtherFunctions;
     public List<string> sentences;
 }
 
