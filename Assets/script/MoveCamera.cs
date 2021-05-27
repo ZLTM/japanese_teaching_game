@@ -8,7 +8,12 @@ public class MoveCamera : MonoBehaviour
     GameObject target;
 
     // Update is called once per frame
-
+    public void MoveToLab() 
+    {
+        cam = GameObject.Find("MainCamera").GetComponent<Camera>();
+        target = GameObject.Find("LabTarget");
+        cam.transform.position = target.transform.position;               
+    }
     public void MoveToPuzzle() 
     {
         cam = GameObject.Find("MainCamera").GetComponent<Camera>();
