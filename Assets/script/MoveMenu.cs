@@ -117,8 +117,8 @@ speed: movement speed */
 
     public void SetKanjiContent()
     {
-        rtdb.Read_Data(clickedButtonName);
         clickedButtonName = EventSystem.current.currentSelectedGameObject.name;
+        
 
         kanjiReading = GameObject.Find(clickedButtonName).GetComponent<kanjiDetails>().Readings;
         selectedReading = GameObject.Find("SelectedReading").GetComponent<TextMeshProUGUI>();
@@ -128,11 +128,6 @@ speed: movement speed */
         selectedDescription = GameObject.Find("SelectedDescription").GetComponent<TextMeshProUGUI>();
         selectedDescription.text = kanjiDescription;
 
+        rtdb.Read_Data(clickedButtonName);
     }
-/* to delete 
-    public void MoveGuiElement()
-    {
-        print("update");
-    } */
-
 }

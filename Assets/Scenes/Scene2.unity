@@ -484,8 +484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed27c5101a2244e9f6a1b5eda0e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip: {fileID: 0}
+  audioSource: {fileID: 18981702}
+  clip: {fileID: 8300000, guid: 2e81ab9b1efd436469aa6063c38c299c, type: 3}
   volume: 0.5
 --- !u!54 &18981697
 Rigidbody:
@@ -1342,7 +1342,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dafd7532be4ae0d449f7ebd5bcb9aa04, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2702,8 +2702,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed27c5101a2244e9f6a1b5eda0e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip: {fileID: 0}
+  audioSource: {fileID: 385033198}
+  clip: {fileID: 8300000, guid: 2e81ab9b1efd436469aa6063c38c299c, type: 3}
   volume: 0.5
 --- !u!54 &385033193
 Rigidbody:
@@ -3015,8 +3015,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed27c5101a2244e9f6a1b5eda0e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip: {fileID: 0}
+  audioSource: {fileID: 421772417}
+  clip: {fileID: 8300000, guid: 2e81ab9b1efd436469aa6063c38c299c, type: 3}
   volume: 0.5
 --- !u!54 &421772412
 Rigidbody:
@@ -3407,8 +3407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed27c5101a2244e9f6a1b5eda0e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip: {fileID: 0}
+  audioSource: {fileID: 430776527}
+  clip: {fileID: 8300000, guid: 2e81ab9b1efd436469aa6063c38c299c, type: 3}
   volume: 0.5
 --- !u!54 &430776522
 Rigidbody:
@@ -4083,7 +4083,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: af2cd79b0ce0c5f4da91e412c4ccf814, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4306,7 +4306,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  IchiSuccess: 1
+  IchiSuccess: 0
   IchiFailure: 0
   NiSuccess: 1
   NiFailure: 1
@@ -4326,6 +4326,7 @@ MonoBehaviour:
   JuuFailure: 8
   HiSuccess: 1
   HiFailure: 9
+  id: 
 --- !u!114 &548706935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4457,7 +4458,21 @@ MonoBehaviour:
     CharacterImage: {fileID: 21300000, guid: 11d1c65218e63b94492d59937b41c9b9, type: 3}
     mirrowed: 0
     CharacterPosition: 1
-    OtherFunctions: []
+    OtherFunctions:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 416179042}
+          m_TargetAssemblyTypeName: RTDB, Assembly-CSharp
+          m_MethodName: Save_Data
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     sentences:
     - presiona el boton de avance para continuar.
     - Iniciaste el juego en su modo de prueba tecnica.
@@ -4502,7 +4517,21 @@ MonoBehaviour:
     CharacterImage: {fileID: 21300000, guid: 642e6044a3aed1549afee1ebe5eaf4c3, type: 3}
     mirrowed: 1
     CharacterPosition: 2
-    OtherFunctions: []
+    OtherFunctions:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 416179042}
+          m_TargetAssemblyTypeName: RTDB, Assembly-CSharp
+          m_MethodName: Save_Data
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     sentences:
     - Este comportamiento se controla gracias a Screenplay.
     - Ademas el porcentaje de exito por cada kanji es actualizado.
@@ -5257,8 +5286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed27c5101a2244e9f6a1b5eda0e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip: {fileID: 0}
+  audioSource: {fileID: 662047634}
+  clip: {fileID: 8300000, guid: 2e81ab9b1efd436469aa6063c38c299c, type: 3}
   volume: 0.5
 --- !u!54 &662047629
 Rigidbody:
@@ -6987,8 +7016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed27c5101a2244e9f6a1b5eda0e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip: {fileID: 0}
+  audioSource: {fileID: 934023292}
+  clip: {fileID: 8300000, guid: 2e81ab9b1efd436469aa6063c38c299c, type: 3}
   volume: 0.5
 --- !u!54 &934023287
 Rigidbody:
@@ -7378,8 +7407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed27c5101a2244e9f6a1b5eda0e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip: {fileID: 0}
+  audioSource: {fileID: 1064593433}
+  clip: {fileID: 8300000, guid: 2e81ab9b1efd436469aa6063c38c299c, type: 3}
   volume: 0.5
 --- !u!54 &1064593428
 Rigidbody:
@@ -7633,8 +7662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed27c5101a2244e9f6a1b5eda0e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip: {fileID: 0}
+  audioSource: {fileID: 1116701228}
+  clip: {fileID: 8300000, guid: 2e81ab9b1efd436469aa6063c38c299c, type: 3}
   volume: 0.5
 --- !u!54 &1116701223
 Rigidbody:
@@ -9953,8 +9982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed27c5101a2244e9f6a1b5eda0e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip: {fileID: 0}
+  audioSource: {fileID: 1589293232}
+  clip: {fileID: 8300000, guid: 2e81ab9b1efd436469aa6063c38c299c, type: 3}
   volume: 0.5
 --- !u!54 &1589293227
 Rigidbody:
@@ -10813,8 +10842,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed27c5101a2244e9f6a1b5eda0e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  clip: {fileID: 0}
+  audioSource: {fileID: 1742412089}
+  clip: {fileID: 8300000, guid: 2e81ab9b1efd436469aa6063c38c299c, type: 3}
   volume: 0.5
 --- !u!54 &1742412084
 Rigidbody:

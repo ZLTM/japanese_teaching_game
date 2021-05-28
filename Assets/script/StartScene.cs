@@ -46,6 +46,7 @@ public class StartScene : MonoBehaviour
     public double HiPercentage;
     // public List<KanjiRatings> kanjiRatings = new List<KanjiRatings>();
     PrologueScript prologueScript;
+    public string id;
     void Awake() 
     {
         IchiPercentage = IchiSuccess/(IchiSuccess+IchiFailure);

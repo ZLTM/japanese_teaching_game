@@ -1,9 +1,8 @@
 using UnityEngine;
 using Firebase.Database;
-using TMPro;
-using UnityEngine.UI; 
 using System.Threading.Tasks;
 using Google;
+using TMPro;
 
 public class RTDB : MonoBehaviour
 {
@@ -25,10 +24,9 @@ public class RTDB : MonoBehaviour
         // Save_Data();
     }
 
-    void update() {
-        
+    void update() 
+    {        
         KanjiValues = GameObject.Find("GM").GetComponent<StartScene>();
-        print(KanjiValues.IchiPercentage);
     }
 
     public void Save_Data() 
@@ -38,8 +36,8 @@ public class RTDB : MonoBehaviour
     }
     internal void savedata(Task<GoogleSignInUser> task)
     {
-        user.UserId = task.Result.UserId;
-        // user.Email = googleSignInUser.Email;
+        user.UserId = GameObject.Find("GM").GetComponent<StartScene>().id;
+        
         user.Ichi = KanjiValues.IchiPercentage;
         user.Ni = KanjiValues.NiPercentage;
         user.San = KanjiValues.SanPercentage;
@@ -52,7 +50,7 @@ public class RTDB : MonoBehaviour
         user.Hi = KanjiValues.HiPercentage;
 
         string json = JsonUtility.ToJson(user);
-
+        
         FirebaseDatabase.DefaultInstance.RootReference.Child(user.UserId).SetRawJsonValueAsync(json).ContinueWith(task =>
         {
             if (task.IsCompleted)
@@ -87,6 +85,6 @@ public class RTDB : MonoBehaviour
 
     public void SetText(string UsedName)
     {
-        UpdatedName = UsedName;
+        GameObject.Find("SuccessPercentage").GetComponent<TextMeshProUGUI>().text = UsedName;
     }
 }

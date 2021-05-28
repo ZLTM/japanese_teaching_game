@@ -31,6 +31,7 @@ public string webClientId = "<your client id here>";
 private GoogleSignInConfiguration configuration;
 
 GoogleSignInUser googleSignInUser;
+StartScene KanjiValues;
 
 // Defer the configuration creation until Awake so the web Client ID
 // Can be set via the property inspector in the Editor.
@@ -40,6 +41,7 @@ void Awake() {
         RequestIdToken = true
     };
     OnSignIn();
+    KanjiValues = GameObject.Find("GM").GetComponent<StartScene>();
 }
 
 
@@ -79,6 +81,20 @@ internal void OnAuthenticationFinished(Task<GoogleSignInUser> task) {
         AddStatusText("Canceled");
     } else  
     {
+        GameObject.Find("GM").GetComponent<StartScene>().id = task.Result.UserId;
+
+        user.UserId = task.Result.UserId;
+        user.Ichi = KanjiValues.IchiPercentage;
+        user.Ni = KanjiValues.NiPercentage;
+        user.San = KanjiValues.SanPercentage;
+        user.Yon = KanjiValues.YonPercentage;
+        user.Go = KanjiValues.GoPercentage;
+        user.Roku = KanjiValues.RokuPercentage;
+        user.Nana = KanjiValues.NanaPercentage;
+        user.Hachi = KanjiValues.HachiPercentage;
+        user.Juu = KanjiValues.JuuPercentage;
+        user.Hi = KanjiValues.HiPercentage;
+
         AddStatusText("Welcome: " + task.Result.DisplayName + "!");
                 string json = JsonUtility.ToJson(user);
 
