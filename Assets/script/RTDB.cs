@@ -21,7 +21,7 @@ public class RTDB : MonoBehaviour
     {
         UpdatedName = "";
         KanjiValues = GameObject.Find("GM").GetComponent<StartScene>();
-        // Save_Data();
+        Save_Data();
     }
 
     void update() 
@@ -36,6 +36,7 @@ public class RTDB : MonoBehaviour
     }
     internal void savedata(Task<GoogleSignInUser> task)
     {
+        Debug.Log("SAVE");
         user.UserId = GameObject.Find("GM").GetComponent<StartScene>().id;
         
         user.Ichi = KanjiValues.IchiPercentage;

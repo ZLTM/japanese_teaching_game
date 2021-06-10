@@ -4486,7 +4486,7 @@ MonoBehaviour:
     sentences:
     - 'El nuevo personaje aparece segun sus parametros. '
     - "Estos est\xE1n definidos por el modulo Screenplay."
-    - Los parametros incluyen posicion, nombre..
+    - "Los parametros incluyen posici\xF3n, nombre..."
     - "Orientaci\xF3n, imagen, dialogo, y algunas funciones extra."
     - Estas son llamadas al acabar con el parrafo.
     - Son utiles para implementar diversos efectos en el juego.
@@ -6689,8 +6689,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.056643993, y: 0.008273196}
   m_AnchorMax: {x: 0.9594807, y: 0.5476147}
-  m_AnchoredPosition: {x: 0.31329346, y: 31.599976}
-  m_SizeDelta: {x: -3.1595001, y: -75.8067}
+  m_AnchoredPosition: {x: 0.31329346, y: -0.7519989}
+  m_SizeDelta: {x: -3.1595, y: -11.1026}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &921306475
 MonoBehaviour:
@@ -6712,10 +6712,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Un cient\xEDfico trata con un compuesto delicado, debe mezclar los elementos
-    A, B, y C, de la siguiente manera, el elemento C es el doble del elemento A,
-    el elemento B es la mitad del elemento A.\nArrastra las cantidades correctas
-    a cada elemento."
+  m_text: 'Se trata con un compuesto delicado, deben mezclarse los elementos A, B,
+    y C, el elemento C es el doble del elemento A, el elemento B es la mitad del
+    elemento A.
+
+    Arrastra las cantidades correctas a cada elemento.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6778,7 +6779,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -6.8523407, z: 0, w: -67.93225}
+  m_margin: {x: 0, y: -6.8523407, z: 0, w: 0.28834534}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
