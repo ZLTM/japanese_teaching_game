@@ -26,7 +26,7 @@ The audio and game sprites are not mine.
 
 ## Installation
 
-Clone or download the project, you can also download the build from the build directory.
+Clone or download the project, you can also download the apk from the build directory.
 
 ## Gameplay
 
