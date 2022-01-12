@@ -13,7 +13,7 @@ Both the translation system and the dialogue systems where made from scratch,
 the dialogue system allows the writter to input the character name, the position in the screen, the events called during the dialogue,
 the sprite to be used, and the sentences.
 
-<img border="0" align="center"  src="https://imgur.com/yIyOC6X"></a>
+<img border="0" align="center"  src="https://i.imgur.com/yIyOC6X.png"></a>
 
 ## Participation
 
