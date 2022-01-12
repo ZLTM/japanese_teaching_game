@@ -4454,119 +4454,158 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenplay:
-  - name: Lenor
-    CharacterImage: {fileID: 21300000, guid: 11d1c65218e63b94492d59937b41c9b9, type: 3}
+  - name: Co.Re
+    CharacterImage: {fileID: 0}
     mirrowed: 0
-    CharacterPosition: 1
-    OtherFunctions:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 416179042}
-          m_TargetAssemblyTypeName: RTDB, Assembly-CSharp
-          m_MethodName: Save_Data
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    sentences:
-    - presiona el boton de avance para continuar.
-    - Iniciaste el juego en su modo de prueba tecnica.
-    - Aqui podras ver los sistemas del juego sin tener que leer el guion completo
-    - Presiona el boton de continuar para llamar a otro personaje.
-  - name: Monica
-    CharacterImage: {fileID: 21300000, guid: 642e6044a3aed1549afee1ebe5eaf4c3, type: 3}
-    mirrowed: 1
-    CharacterPosition: 2
+    CharacterPosition: 3
     OtherFunctions: []
     sentences:
-    - 'El nuevo personaje aparece segun sus parametros. '
-    - "Estos est\xE1n definidos por el modulo Screenplay."
-    - "Los parametros incluyen posici\xF3n, nombre..."
-    - "Orientaci\xF3n, imagen, dialogo, y algunas funciones extra."
-    - Estas son llamadas al acabar con el parrafo.
-    - Son utiles para implementar diversos efectos en el juego.
-    - Para continuar el siguiente dialogo presiona sobre el kanji e introduce el
-      texto "ichi"
-  - name: Monica
-    CharacterImage: {fileID: 21300000, guid: 642e6044a3aed1549afee1ebe5eaf4c3, type: 3}
+    - "Por favor presione el boton para continuar\u2026"
+  - name: 
+    CharacterImage: {fileID: 0}
     mirrowed: 1
-    CharacterPosition: 2
-    OtherFunctions:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 548706935}
-          m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-          m_MethodName: SwitchDialogButton
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: true
-            m_BoolArgument: 0
-          m_CallState: 2
+    CharacterPosition: 3
+    OtherFunctions: []
     sentences:
-    - "\u4E00"
-  - name: Monica
-    CharacterImage: {fileID: 21300000, guid: 642e6044a3aed1549afee1ebe5eaf4c3, type: 3}
+    - La computadora finalmente enciende
+    - Escuchar a alguien hace que me sienta mejor
+    - "Aun si es una maquina\u2026"
+  - name: 
+    CharacterImage: {fileID: 0}
     mirrowed: 1
-    CharacterPosition: 2
-    OtherFunctions:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 416179042}
-          m_TargetAssemblyTypeName: RTDB, Assembly-CSharp
-          m_MethodName: Save_Data
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    CharacterPosition: 3
+    OtherFunctions: []
     sentences:
-    - Este comportamiento se controla gracias a Screenplay.
-    - Ademas el porcentaje de exito por cada kanji es actualizado.
-  - name: Lenor
+    - "Este viaje ha sido el mas impulsivo que he tomado en a\xF1os"
+    - La paga es buena y los gastos estan cubiertos
+    - Concentrate en eso, es solo una noche
+    - En un pais al otro lado del mundo
+    - ' Donde no conosco el idioma o costumbres'
+    - ' En un edificio sin ninguna otra persona en la madrugada de un sabado'
+    - ...
+    - "Es solo una noche en\u2026"
+  - name: Co.Re
+    CharacterImage: {fileID: 0}
+    mirrowed: 1
+    CharacterPosition: 3
+    OtherFunctions: []
+    sentences:
+    - Ha accedido al sistema Co.Re, bienvenido.
+    - ' Asegurece de haber leido las normativas de su pais antes de continuar'
+  - name: 
+    CharacterImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 3
+    OtherFunctions: []
+    sentences:
+    - ' Diversos perifericos salen de la pc'
+    - ' Un lector de retinas'
+    - ' Un lector de huellas'
+    - ' Un lector del ritmo cardiaco'
+    - ' Iniciarlos todos es un proceso largo y molesto'
+    - ' Imagino que asi se sentira ser abducido por un OVNI'
+    - ' El silencio del lugar no hace mas que acrecentar mi incomodidad'
+    - " \u2026 \u2026 \u2026"
+  - name: Leonore
     CharacterImage: {fileID: 21300000, guid: 11d1c65218e63b94492d59937b41c9b9, type: 3}
     mirrowed: 0
     CharacterPosition: 1
-    OtherFunctions:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 548706932}
-          m_TargetAssemblyTypeName: MoveCamera, Assembly-CSharp
-          m_MethodName: MoveToPuzzle
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+    OtherFunctions: []
     sentences:
-    - Puedes consultar este porcentaje en el menu de kanjis
-    - Presiona el boton de la esquina izquierda para verlo.
-    - Luego selecciona el kanji a revizar.
-    - Vuelve a presionar el boton para cerrar el menu
-    - "El menu debajo de este te muestra informaci\xF3n sobre el mini-juego actual."
-    - Puedes usarlo para encontrar la respuesta correcta, intentemoslo.
-    - La solucion para este primer acertijo es mover los kanjis correctos sobre las
-      letras.
-    - "De izquierda a derecha la soluci\xF3n son los kanjis 2, 1, y 4 (\u4E8C, \u4E00,
-      \u56DB)"
-    - Al resolver el acertijo el boton inferior se habilita y permite continuar el
-      juego.
+    - Conexion aceptada, bien!
+    - Habria sido un desperdicio que no te dejara ingresar
+  - name: 
+    CharacterImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 3
+    OtherFunctions: []
+    sentences:
+    - Mi contacto aparece en una ventana de chat tan pronto como la pantalla se enciende
+    - Lei toda la normativa, la de mi pais y la de otros
+    - Aun asi no entiendo porque solo acepta mi biometrico
+  - name: Leonor
+    CharacterImage: {fileID: 21300000, guid: 11d1c65218e63b94492d59937b41c9b9, type: 3}
+    mirrowed: 0
+    CharacterPosition: 1
+    OtherFunctions: []
+    sentences:
+    - El sistema es muy exigente
+    - No inicia ameneos que detecte el registro de ciertas personas
+    - Aun asi no entiendo porque solo acepta mi biometrico
+    - Nos tardamos en peinar la base de datos y parece que requiere el tuyo
+  - name: 
+    CharacterImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 3
+    OtherFunctions: []
+    sentences:
+    - Revisaron los registros de la poblacion entera?
+    - No creo que eso sea legal
+  - name: Leonor
+    CharacterImage: {fileID: 21300000, guid: 11d1c65218e63b94492d59937b41c9b9, type: 3}
+    mirrowed: 0
+    CharacterPosition: 1
+    OtherFunctions: []
+    sentences:
+    - "\u305D\u308C\u306B\u5FC3\u914D\u3057\u306A\u3044\u3067\u304F\u3060\u3055\u3044\uFF01"
+  - name: 
+    CharacterImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 3
+    OtherFunctions: []
+    sentences:
+    - "Eso es japones? La pantalla se lleno de simbolos extra\xF1os"
+    - ... ... ...
+    - ... ...
+    - ...
+    - Estas ahi?
+  - name: Leonor
+    CharacterImage: {fileID: 21300000, guid: 11d1c65218e63b94492d59937b41c9b9, type: 3}
+    mirrowed: 0
+    CharacterPosition: 1
+    OtherFunctions: []
+    sentences:
+    - Lo siento, ya regrese
+    - Segun el registro el sistema de traduccion tiene errores
+  - name: 
+    CharacterImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 3
+    OtherFunctions: []
+    sentences:
+    - Mas errores? En Co.Re? Este sistema gestiona nuestra vida entera
+    - Tiene demasiados errores para tener un trabajo tan importante
+  - name: Leonor
+    CharacterImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 1
+    OtherFunctions: []
+    sentences:
+    - Por eso estas aqu
+    - Ahora, si podemos comenzar a usarlo
+    - ves ese boton en la esquina izquierda superior de la pantalla?
+    - ' Deberia tener kanjis como los que viste hace un rato'
+  - name: 
+    CharacterImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 3
+    OtherFunctions: []
+    sentences:
+    - Lo veo
+  - name: Leonor
+    CharacterImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 1
+    OtherFunctions: []
+    sentences:
+    - Si lo presionas podras escoger de una lista de kanjis
+    - Puedes ver su lectura y significado
+    - Si vuelves a ver kanjis que no entiendes puedes consultarlo
+    - El sistema no continuara amenos que resuelvas todas las traducciones
+    - Me encargue hace un momento pero revisar los registros puede tomar mucho tiempo
+    - Sera mas rapido si lo haces tu que puedes ver tu pentalla
+    - "Cuando hayas terminado, solo vuelve a presionar el bot\xF3n para cerrar el
+      menu"
 --- !u!114 &548706939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8203,6 +8242,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151577325}
   m_CullTransparentMesh: 0
+--- !u!1 &1177186344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1177186348}
+  - component: {fileID: 1177186347}
+  - component: {fileID: 1177186346}
+  - component: {fileID: 1177186345}
+  m_Layer: 0
+  m_Name: Char3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1177186345
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177186344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 5.274618, y: 10.589248, z: 0.2}
+  m_Center: {x: -0.06865292, y: -0.24028604, z: 0}
+--- !u!114 &1177186346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177186344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6e87762713be949b705430f2a73457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KanjiInit: {fileID: 1197244561}
+  TranslationInit: {fileID: 349104123}
+  DialogBoxInit: {fileID: 166293445}
+  KanjiInfoInit: {fileID: 574761722}
+  PuzzleInit: {fileID: 0}
+  Kanji: {fileID: 1406322275}
+  Translation: {fileID: 1462974237}
+  DialogBox: {fileID: 1147140215}
+  KanjiInfo: {fileID: 500755158}
+  Puzzle: {fileID: 0}
+  dialogue:
+  - name: 
+    CharacterImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 1
+    OtherFunctions:
+    - m_PersistentCalls:
+        m_Calls: []
+    sentences: []
+  - name: 
+    CharacterImage: {fileID: 0}
+    mirrowed: 0
+    CharacterPosition: 1
+    OtherFunctions:
+    - m_PersistentCalls:
+        m_Calls: []
+    sentences: []
+--- !u!212 &1177186347
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177186344}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5, y: 2.9}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1177186348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177186344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -31.23, z: -1}
+  m_LocalScale: {x: 0.73678106, y: 0.73678106, z: 0.73678106}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197244561
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,10 +23,4 @@ public class DialogueTrigger : MoveMenu
 		CharacterVessel.GetComponent<SpriteRenderer>().sprite = CharacterImage;
 		CharacterVessel.GetComponent<SpriteRenderer>().flipX = CharacterMirror;
 	}
-
-/* 	to delete
-	public void SetivateCharacterCollision(bool enabledCollider, int positionCollider)
-	{
-		GameObject.Find("Char"+positionCollider).GetComponent<BoxCollider>().enabled = enabledCollider;
-	} */
 }

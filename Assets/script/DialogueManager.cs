@@ -104,8 +104,6 @@ screenplayInfo: recieves object list including:
 
         string name = names.Peek();
         nameText.text = name; 
-
-
         
         if (sentences.Count > 0)  
         {
@@ -115,8 +113,7 @@ screenplayInfo: recieves object list including:
                 CallOtherFunctions(func);
                 functionCount++;
             }
-
-
+            //copy this to the else statement hmmmmmmmmmm
             if(sentenceCount <= numberDialogue[k])  
             {
                 string sentence = sentences.Dequeue();
