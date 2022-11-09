@@ -10,7 +10,7 @@ Edutainment game made as a tesis for the undergrad title of systems engineer. Le
 
 Both the translation system and the dialogue systems where made from scratch, the dialogue system allows the writter to input the character name, the position in the screen, the events called during the dialogue, the sprite to be used, and the sentences without needing to edit the code.
 
-<img border="0" align="center"  src="https://imgur.com/yIyOC6X"></a>
+<img border="0" align="center"  src="[https://imgur.com/yIyOC6X](https://i.imgur.com/yIyOC6X.png)"></a>
 
 ## Participation
 
@@ -23,9 +23,6 @@ Ready to play on itch io, install it and run it.
 ## Gameplay
 
 Visual novel focused on the teaching of japanese, solve puzzles as you go trough the story.
-
-
-<img border="0" align="center"  src="https://i.imgur.com/BV2q8q6.jpg"></a>
 
 ## Contact
 
