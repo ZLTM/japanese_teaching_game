@@ -18,7 +18,7 @@ Programmed every system from the ground up with an special emphasis on the dialo
 
 ## Installation
 
-Ready to play on itch io, install it and run it.
+Download the apk, installed it by allowing non trusted sources.
 
 ## Gameplay
 
