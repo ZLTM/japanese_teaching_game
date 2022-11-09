@@ -1,4 +1,4 @@
-# RollA-ARG-Ball
+# JHack
 Project made for the bachelor degree of systems engineer, awarded with a qualification of 100/100, available for reading in spanish at the UCB web site http://www.bibvirtual.ucb.edu.bo:8000/opac/Record/101006186
 
 [![Type](https://img.shields.io/badge/Type-Videogame-945C1D.svg)](https://github.com/ZLTM/Taki)
@@ -10,7 +10,7 @@ Edutainment game made as a tesis for the undergrad title of systems engineer. Le
 
 Both the translation system and the dialogue systems where made from scratch, the dialogue system allows the writter to input the character name, the position in the screen, the events called during the dialogue, the sprite to be used, and the sentences without needing to edit the code.
 
-<img border="0" align="center"  src="https://i.imgur.com/5dA4bLY.png"></a>
+<img border="0" align="center"  src="https://imgur.com/yIyOC6X"></a>
 
 ## Participation
 
